@@ -104,3 +104,10 @@ C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebA
 C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
 C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.dll
 C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.pdb
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\GasStationPharmacyDataAccess.dll
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\GasStationPharmacyDataAccess.pdb
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\GasStationPharmacyDataAccess.dll.config
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.xml
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.dll
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.SqlServer.dll
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.SqlServer.xml

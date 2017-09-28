@@ -1,0 +1,11 @@
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\bin\Debug\GasStationPharmacyDataAccess.dll.config
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\bin\Debug\GasStationPharmacyDataAccess.dll
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\bin\Debug\GasStationPharmacyDataAccess.pdb
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\obj\Debug\GasStationPharmacyDataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\obj\Debug\GasStationPharmacyDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\obj\Debug\GasStationPharmacyDataAccess.dll
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\GasStationPharmacyDataAccess\obj\Debug\GasStationPharmacyDataAccess.pdb

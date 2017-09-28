@@ -1,0 +1,13 @@
+Create Database GasStationPharmacy
+Go
+
+Use GasStationPharmacy
+Go
+
+Create table USUARIOS
+(
+     email varchar(50) NOT NULL primary key,
+     contrasena varchar(20) NOT NULL,
+     tipoUsuario int NOT NULL
+)
+Go
