@@ -6,6 +6,7 @@ GO
 
 CREATE TABLE COMPAÑIA(
 Nombre VARCHAR(50) NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Nombre)
 );
 
@@ -16,6 +17,7 @@ Cuidad VARCHAR(20),
 Señas VARCHAR(50),
 Descripcion VARCHAR(50),
 Compañia VARCHAR(50) NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Nombre),
 );
 
@@ -31,12 +33,14 @@ Señas VARCHAR(50),
 FechaNacimiento DATE NOT NULL,
 Contraseña VARCHAR(15) NOT NULL,
 Sucursal VARCHAR(50) NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Cedula)
 );
 
 CREATE TABLE ROL(
 Nombre VARCHAR(20) NOT NULL,
 Descripcion VARCHAR(50),
+Activo BIT NOT NULL,
 PRIMARY KEY(Nombre) 
 );
 
@@ -52,6 +56,7 @@ Señas VARCHAR(50),
 FechaNacimiento DATE NOT NULL,
 Prioridad INT NOT NULL,
 Contraseña VARCHAR(15) NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Cedula)
 );
 
@@ -62,6 +67,7 @@ FechaRecojo DATETIME NOT NULL,
 Telefono INT,
 Sucursal VARCHAR(50) NOT NULL,
 Cliente INT NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Numero)
 );
 
@@ -69,12 +75,14 @@ CREATE TABLE RECETA(
 Numero INT NOT NULL,
 Imagen IMAGE,
 Nombre VARCHAR(20),
+Activo BIT NOT NULL,
 PRIMARY KEY(Numero)
 );
 
 CREATE TABLE CASAFARMACEUTICA(
 Nombre VARCHAR(50) NOT NULL,
 Sede VARCHAR(50),
+Activo BIT NOT NULL,
 PRIMARY KEY(Nombre)
 );
 
@@ -83,6 +91,7 @@ Nombre VARCHAR(50) NOT NULL,
 Prescripcion BIT NOT NULL,
 Cantidad INT NOT NULL,
 CasaFarmaceutica VARCHAR(50) NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Nombre)
 );
 
@@ -90,39 +99,44 @@ CREATE TABLE PADECIMIENTO(
 Cliente INT NOT NULL,
 Padecimiento VARCHAR(50),
 Año INT,
+Activo BIT NOT NULL,
 PRIMARY KEY(Cliente,Padecimiento)
 );
 
 CREATE TABLE ADMINISTRADORXSUCURSAL(
 Administrador INT NOT NULL,
 Sucursal VARCHAR(50) NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Administrador,Sucursal),
 );
 
 CREATE TABLE ROLXDEPENDIENTE(
 Dependiente INT NOT NULL,
 Rol VARCHAR(20) NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Dependiente,Rol)
 );
 
 CREATE TABLE MEDICAMENTOXPEDIDO(
 Pedido INT NOT NULL,
 Medicamento VARCHAR(50) NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Pedido,Medicamento)
 );
 
 CREATE TABLE MEDICAMENTOXRECETA(
 Receta INT NOT NULL,
 Medicamento VARCHAR(50) NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Receta,Medicamento)
 );
 
 CREATE TABLE TELEFONOXCLIENTE(
 Cliente INT NOT NULL,
 Telefono INT NOT NULL,
+Activo BIT NOT NULL,
 PRIMARY KEY(Cliente,Telefono)
 );
-
 use GasStationPharmacy
 GO
 
