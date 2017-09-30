@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Login </title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/script.js"></script>
+</head>
+<body ng-app="app">
+    <div ng-controller="MainController">
+
+        <table>
+            <tr>
+                <td>Email</td>
+                <td>PASSWORD</td>
+            </tr>
+            <tr ng-repeat="user in users">
+                <td>{{user.email}}</td>
+                <td>{{user.contrasena}}</td>
+            </tr>
+
+        </table>
+
+
+    </div>
+</body>
+</html>
