@@ -78,7 +78,7 @@
   <ItemGroup>
     <Content Include="AngularJS\script.js" />
     <Content Include="AngularJS\Templates\entra.html" />
-    <Content Include="AngularJS\Templates\inicio.html" />
+    <Content Include="AngularJS\Templates\login.html" />
     <Content Include="CSS\styles.css" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -105,7 +105,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52970</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost</IISUrl>
+          <IISUrl>http://localhost/WebApp</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

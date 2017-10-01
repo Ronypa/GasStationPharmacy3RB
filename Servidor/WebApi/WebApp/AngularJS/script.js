@@ -33,7 +33,7 @@ app.controller('logincontroller', function ($scope, loginservice) {
     $scope.login = function () {
         //Body de la peticion http
         var userLogin = {
-            grant_type: 'password',
+            grant_type: 'password',//Solo para login
             username: $scope.userLoginEmail,
             password: $scope.userLoginPassword
         };
