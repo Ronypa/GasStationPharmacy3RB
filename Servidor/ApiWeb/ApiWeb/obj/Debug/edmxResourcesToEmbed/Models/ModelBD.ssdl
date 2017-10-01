@@ -1,15 +1,416 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GasStationPharmacyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="USUARIOS">
+  <EntityType Name="ADMINISTRADORXSUCURSAL">
     <Key>
-      <PropertyRef Name="email" />
+      <PropertyRef Name="Administrador" />
+      <PropertyRef Name="Sucursal" />
     </Key>
-    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="contrasena" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="tipoUsuario" Type="int" Nullable="false" />
-    <Property Name="prueba" Type="varchar" MaxLength="10" />
+    <Property Name="Administrador" Type="int" Nullable="false" />
+    <Property Name="Sucursal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="CASAFARMACEUTICA">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sede" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="Cedula" />
+    </Key>
+    <Property Name="Cedula" Type="int" Nullable="false" />
+    <Property Name="Nombre1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre2" Type="varchar" MaxLength="20" />
+    <Property Name="Apellido1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Apellido2" Type="varchar" MaxLength="20" />
+    <Property Name="Provincia" Type="varchar" MaxLength="10" />
+    <Property Name="Cuidad" Type="varchar" MaxLength="30" />
+    <Property Name="Señas" Type="varchar" MaxLength="50" />
+    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="Prioridad" Type="int" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMPAÑIA">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sede" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPLEADO">
+    <Key>
+      <PropertyRef Name="Cedula" />
+    </Key>
+    <Property Name="Cedula" Type="int" Nullable="false" />
+    <Property Name="Nombre1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre2" Type="varchar" MaxLength="20" />
+    <Property Name="Apellido1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Apellido2" Type="varchar" MaxLength="20" />
+    <Property Name="Provincia" Type="varchar" MaxLength="20" />
+    <Property Name="Cuidad" Type="varchar" MaxLength="20" />
+    <Property Name="Señas" Type="varchar" MaxLength="50" />
+    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Sucursal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MEDICAMENTO">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prescripcion" Type="bit" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="CasaFarmaceutica" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MEDICAMENTOXPEDIDO">
+    <Key>
+      <PropertyRef Name="Pedido" />
+      <PropertyRef Name="Medicamento" />
+    </Key>
+    <Property Name="Pedido" Type="int" Nullable="false" />
+    <Property Name="Medicamento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MEDICAMENTOXRECETA">
+    <Key>
+      <PropertyRef Name="Receta" />
+      <PropertyRef Name="Medicamento" />
+    </Key>
+    <Property Name="Receta" Type="int" Nullable="false" />
+    <Property Name="Medicamento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PADECIMIENTO">
+    <Key>
+      <PropertyRef Name="Cliente" />
+      <PropertyRef Name="Padecimiento" />
+    </Key>
+    <Property Name="Cliente" Type="int" Nullable="false" />
+    <Property Name="Padecimiento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Año" Type="int" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PEDIDO">
+    <Key>
+      <PropertyRef Name="Numero" />
+    </Key>
+    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaRecojo" Type="datetime" Nullable="false" />
+    <Property Name="Telefono" Type="int" />
+    <Property Name="Sucursal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cliente" Type="int" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RECETA">
+    <Key>
+      <PropertyRef Name="Numero" />
+    </Key>
+    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Imagen" Type="image" />
+    <Property Name="Nombre" Type="varchar" MaxLength="20" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ROL">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ROLXDEPENDIENTE">
+    <Key>
+      <PropertyRef Name="Dependiente" />
+      <PropertyRef Name="Rol" />
+    </Key>
+    <Property Name="Dependiente" Type="int" Nullable="false" />
+    <Property Name="Rol" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SUCURSAL">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Provincia" Type="varchar" MaxLength="20" />
+    <Property Name="Cuidad" Type="varchar" MaxLength="20" />
+    <Property Name="Señas" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="Compañia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TELEFONOXCLIENTE">
+    <Key>
+      <PropertyRef Name="Cliente" />
+      <PropertyRef Name="Telefono" />
+    </Key>
+    <Property Name="Cliente" Type="int" Nullable="false" />
+    <Property Name="Telefono" Type="int" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ADMINISTR__Admin__412EB0B6">
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+    <End Role="ADMINISTRADORXSUCURSAL" Type="Self.ADMINISTRADORXSUCURSAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADO">
+        <PropertyRef Name="Cedula" />
+      </Principal>
+      <Dependent Role="ADMINISTRADORXSUCURSAL">
+        <PropertyRef Name="Administrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ADMINISTR__Sucur__4222D4EF">
+    <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+    <End Role="ADMINISTRADORXSUCURSAL" Type="Self.ADMINISTRADORXSUCURSAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUCURSAL">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="ADMINISTRADORXSUCURSAL">
+        <PropertyRef Name="Sucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EMPLEADO__Sucurs__4AB81AF0">
+    <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUCURSAL">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="EMPLEADO">
+        <PropertyRef Name="Sucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MEDICAMEN__CasaF__3E52440B">
+    <End Role="CASAFARMACEUTICA" Type="Self.CASAFARMACEUTICA" Multiplicity="1" />
+    <End Role="MEDICAMENTO" Type="Self.MEDICAMENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CASAFARMACEUTICA">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="MEDICAMENTO">
+        <PropertyRef Name="CasaFarmaceutica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MEDICAMEN__Medic__46E78A0C">
+    <End Role="MEDICAMENTO" Type="Self.MEDICAMENTO" Multiplicity="1" />
+    <End Role="MEDICAMENTOXPEDIDO" Type="Self.MEDICAMENTOXPEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEDICAMENTO">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="MEDICAMENTOXPEDIDO">
+        <PropertyRef Name="Medicamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MEDICAMEN__Medic__48CFD27E">
+    <End Role="MEDICAMENTO" Type="Self.MEDICAMENTO" Multiplicity="1" />
+    <End Role="MEDICAMENTOXRECETA" Type="Self.MEDICAMENTOXRECETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEDICAMENTO">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="MEDICAMENTOXRECETA">
+        <PropertyRef Name="Medicamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MEDICAMEN__Pedid__45F365D3">
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="1" />
+    <End Role="MEDICAMENTOXPEDIDO" Type="Self.MEDICAMENTOXPEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDIDO">
+        <PropertyRef Name="Numero" />
+      </Principal>
+      <Dependent Role="MEDICAMENTOXPEDIDO">
+        <PropertyRef Name="Pedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MEDICAMEN__Recet__47DBAE45">
+    <End Role="RECETA" Type="Self.RECETA" Multiplicity="1" />
+    <End Role="MEDICAMENTOXRECETA" Type="Self.MEDICAMENTOXRECETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RECETA">
+        <PropertyRef Name="Numero" />
+      </Principal>
+      <Dependent Role="MEDICAMENTOXRECETA">
+        <PropertyRef Name="Receta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PADECIMIE__Clien__4316F928">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="PADECIMIENTO" Type="Self.PADECIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="Cedula" />
+      </Principal>
+      <Dependent Role="PADECIMIENTO">
+        <PropertyRef Name="Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PEDIDO__Cliente__403A8C7D">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="Cedula" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PEDIDO__Sucursal__3F466844">
+    <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUCURSAL">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="Sucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ROLXDEPEN__Depen__44FF419A">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="ROLXDEPENDIENTE" Type="Self.ROLXDEPENDIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="Cedula" />
+      </Principal>
+      <Dependent Role="ROLXDEPENDIENTE">
+        <PropertyRef Name="Dependiente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ROLXDEPENDI__Rol__440B1D61">
+    <End Role="ROL" Type="Self.ROL" Multiplicity="1" />
+    <End Role="ROLXDEPENDIENTE" Type="Self.ROLXDEPENDIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROL">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="ROLXDEPENDIENTE">
+        <PropertyRef Name="Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SUCURSAL__Compañ__4BAC3F29">
+    <End Role="COMPAÑIA" Type="Self.COMPAÑIA" Multiplicity="1" />
+    <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPAÑIA">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="SUCURSAL">
+        <PropertyRef Name="Compañia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TELEFONOX__Clien__49C3F6B7">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="TELEFONOXCLIENTE" Type="Self.TELEFONOXCLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="Cedula" />
+      </Principal>
+      <Dependent Role="TELEFONOXCLIENTE">
+        <PropertyRef Name="Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="GasStationPharmacyModelStoreContainer">
-    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADMINISTRADORXSUCURSAL" EntityType="Self.ADMINISTRADORXSUCURSAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CASAFARMACEUTICA" EntityType="Self.CASAFARMACEUTICA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPAÑIA" EntityType="Self.COMPAÑIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEDICAMENTO" EntityType="Self.MEDICAMENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEDICAMENTOXPEDIDO" EntityType="Self.MEDICAMENTOXPEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEDICAMENTOXRECETA" EntityType="Self.MEDICAMENTOXRECETA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PADECIMIENTO" EntityType="Self.PADECIMIENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PEDIDO" EntityType="Self.PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RECETA" EntityType="Self.RECETA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROL" EntityType="Self.ROL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROLXDEPENDIENTE" EntityType="Self.ROLXDEPENDIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUCURSAL" EntityType="Self.SUCURSAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TELEFONOXCLIENTE" EntityType="Self.TELEFONOXCLIENTE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ADMINISTR__Admin__412EB0B6" Association="Self.FK__ADMINISTR__Admin__412EB0B6">
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End Role="ADMINISTRADORXSUCURSAL" EntitySet="ADMINISTRADORXSUCURSAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ADMINISTR__Sucur__4222D4EF" Association="Self.FK__ADMINISTR__Sucur__4222D4EF">
+      <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+      <End Role="ADMINISTRADORXSUCURSAL" EntitySet="ADMINISTRADORXSUCURSAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EMPLEADO__Sucurs__4AB81AF0" Association="Self.FK__EMPLEADO__Sucurs__4AB81AF0">
+      <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MEDICAMEN__CasaF__3E52440B" Association="Self.FK__MEDICAMEN__CasaF__3E52440B">
+      <End Role="CASAFARMACEUTICA" EntitySet="CASAFARMACEUTICA" />
+      <End Role="MEDICAMENTO" EntitySet="MEDICAMENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MEDICAMEN__Medic__46E78A0C" Association="Self.FK__MEDICAMEN__Medic__46E78A0C">
+      <End Role="MEDICAMENTO" EntitySet="MEDICAMENTO" />
+      <End Role="MEDICAMENTOXPEDIDO" EntitySet="MEDICAMENTOXPEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MEDICAMEN__Medic__48CFD27E" Association="Self.FK__MEDICAMEN__Medic__48CFD27E">
+      <End Role="MEDICAMENTO" EntitySet="MEDICAMENTO" />
+      <End Role="MEDICAMENTOXRECETA" EntitySet="MEDICAMENTOXRECETA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MEDICAMEN__Pedid__45F365D3" Association="Self.FK__MEDICAMEN__Pedid__45F365D3">
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+      <End Role="MEDICAMENTOXPEDIDO" EntitySet="MEDICAMENTOXPEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MEDICAMEN__Recet__47DBAE45" Association="Self.FK__MEDICAMEN__Recet__47DBAE45">
+      <End Role="RECETA" EntitySet="RECETA" />
+      <End Role="MEDICAMENTOXRECETA" EntitySet="MEDICAMENTOXRECETA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PADECIMIE__Clien__4316F928" Association="Self.FK__PADECIMIE__Clien__4316F928">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="PADECIMIENTO" EntitySet="PADECIMIENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PEDIDO__Cliente__403A8C7D" Association="Self.FK__PEDIDO__Cliente__403A8C7D">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PEDIDO__Sucursal__3F466844" Association="Self.FK__PEDIDO__Sucursal__3F466844">
+      <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ROLXDEPEN__Depen__44FF419A" Association="Self.FK__ROLXDEPEN__Depen__44FF419A">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="ROLXDEPENDIENTE" EntitySet="ROLXDEPENDIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ROLXDEPENDI__Rol__440B1D61" Association="Self.FK__ROLXDEPENDI__Rol__440B1D61">
+      <End Role="ROL" EntitySet="ROL" />
+      <End Role="ROLXDEPENDIENTE" EntitySet="ROLXDEPENDIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SUCURSAL__Compañ__4BAC3F29" Association="Self.FK__SUCURSAL__Compañ__4BAC3F29">
+      <End Role="COMPAÑIA" EntitySet="COMPAÑIA" />
+      <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TELEFONOX__Clien__49C3F6B7" Association="Self.FK__TELEFONOX__Clien__49C3F6B7">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="TELEFONOXCLIENTE" EntitySet="TELEFONOXCLIENTE" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

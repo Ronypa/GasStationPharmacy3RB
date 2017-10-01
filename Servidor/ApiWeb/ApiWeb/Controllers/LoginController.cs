@@ -10,22 +10,23 @@ namespace ApiWeb.Controllers
 {
     public class LoginController : ApiController
     {
-
-        public IEnumerable<USUARIO> Get()
+        [Authorize]
+        public IEnumerable<EMPLEADO> Get()
         {
             using (GasStationPharmacyEntities entities = new GasStationPharmacyEntities())
             {
-                return entities.USUARIOS.ToList();
+                entities.Configuration.ProxyCreationEnabled = false;
+                return entities.EMPLEADOes.ToList();
             }
 
         }
 
 
-        public USUARIO Get(string id)
+        public COMPAÑIA Get(string id)
         {
             using (GasStationPharmacyEntities entities = new GasStationPharmacyEntities())
             {
-                return entities.USUARIOS.FirstOrDefault(d => d.email == id);
+                return entities.COMPAÑIA.FirstOrDefault(d => d.Nombre == id);
             }
 
         }

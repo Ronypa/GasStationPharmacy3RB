@@ -25,6 +25,20 @@ namespace ApiWeb.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<USUARIO> USUARIOS { get; set; }
+        public virtual DbSet<ADMINISTRADORXSUCURSAL> ADMINISTRADORXSUCURSALs { get; set; }
+        public virtual DbSet<CASAFARMACEUTICA> CASAFARMACEUTICAs { get; set; }
+        public virtual DbSet<CLIENTE> CLIENTEs { get; set; }
+        public virtual DbSet<COMPAÑIA> COMPAÑIA { get; set; }
+        public virtual DbSet<EMPLEADO> EMPLEADOes { get; set; }
+        public virtual DbSet<MEDICAMENTO> MEDICAMENTOes { get; set; }
+        public virtual DbSet<MEDICAMENTOXPEDIDO> MEDICAMENTOXPEDIDOes { get; set; }
+        public virtual DbSet<MEDICAMENTOXRECETA> MEDICAMENTOXRECETAs { get; set; }
+        public virtual DbSet<PADECIMIENTO> PADECIMIENTOes { get; set; }
+        public virtual DbSet<PEDIDO> PEDIDOes { get; set; }
+        public virtual DbSet<RECETA> RECETAs { get; set; }
+        public virtual DbSet<ROL> ROLs { get; set; }
+        public virtual DbSet<ROLXDEPENDIENTE> ROLXDEPENDIENTEs { get; set; }
+        public virtual DbSet<SUCURSAL> SUCURSALs { get; set; }
+        public virtual DbSet<TELEFONOXCLIENTE> TELEFONOXCLIENTEs { get; set; }
     }
 }

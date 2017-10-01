@@ -4,49 +4,1035 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GasStationPharmacyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="USUARIOS">
+    <Schema Namespace="GasStationPharmacyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMINISTRADORXSUCURSAL">
           <Key>
-            <PropertyRef Name="email" />
+            <PropertyRef Name="Administrador" />
+            <PropertyRef Name="Sucursal" />
           </Key>
-          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="contrasena" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="tipoUsuario" Type="int" Nullable="false" />
-          <Property Name="prueba" Type="varchar" MaxLength="10" />
+          <Property Name="Administrador" Type="int" Nullable="false" />
+          <Property Name="Sucursal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="CASAFARMACEUTICA">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sede" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="Cedula" />
+          </Key>
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Nombre1" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre2" Type="varchar" MaxLength="20" />
+          <Property Name="Apellido1" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Apellido2" Type="varchar" MaxLength="20" />
+          <Property Name="Provincia" Type="varchar" MaxLength="10" />
+          <Property Name="Cuidad" Type="varchar" MaxLength="30" />
+          <Property Name="Señas" Type="varchar" MaxLength="50" />
+          <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="Prioridad" Type="int" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMPAÑIA">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sede" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="Cedula" />
+          </Key>
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Nombre1" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre2" Type="varchar" MaxLength="20" />
+          <Property Name="Apellido1" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Apellido2" Type="varchar" MaxLength="20" />
+          <Property Name="Provincia" Type="varchar" MaxLength="20" />
+          <Property Name="Cuidad" Type="varchar" MaxLength="20" />
+          <Property Name="Señas" Type="varchar" MaxLength="50" />
+          <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Sucursal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MEDICAMENTO">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prescripcion" Type="bit" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="CasaFarmaceutica" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MEDICAMENTOXPEDIDO">
+          <Key>
+            <PropertyRef Name="Pedido" />
+            <PropertyRef Name="Medicamento" />
+          </Key>
+          <Property Name="Pedido" Type="int" Nullable="false" />
+          <Property Name="Medicamento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MEDICAMENTOXRECETA">
+          <Key>
+            <PropertyRef Name="Receta" />
+            <PropertyRef Name="Medicamento" />
+          </Key>
+          <Property Name="Receta" Type="int" Nullable="false" />
+          <Property Name="Medicamento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PADECIMIENTO">
+          <Key>
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Padecimiento" />
+          </Key>
+          <Property Name="Cliente" Type="int" Nullable="false" />
+          <Property Name="Padecimiento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Año" Type="int" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PEDIDO">
+          <Key>
+            <PropertyRef Name="Numero" />
+          </Key>
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FechaRecojo" Type="datetime" Nullable="false" />
+          <Property Name="Telefono" Type="int" />
+          <Property Name="Sucursal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cliente" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RECETA">
+          <Key>
+            <PropertyRef Name="Numero" />
+          </Key>
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="Imagen" Type="image" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROL">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROLXDEPENDIENTE">
+          <Key>
+            <PropertyRef Name="Dependiente" />
+            <PropertyRef Name="Rol" />
+          </Key>
+          <Property Name="Dependiente" Type="int" Nullable="false" />
+          <Property Name="Rol" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUCURSAL">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Provincia" Type="varchar" MaxLength="20" />
+          <Property Name="Cuidad" Type="varchar" MaxLength="20" />
+          <Property Name="Señas" Type="varchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Compañia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TELEFONOXCLIENTE">
+          <Key>
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Telefono" />
+          </Key>
+          <Property Name="Cliente" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__ADMINISTR__Admin__412EB0B6">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="ADMINISTRADORXSUCURSAL" Type="Self.ADMINISTRADORXSUCURSAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="ADMINISTRADORXSUCURSAL">
+              <PropertyRef Name="Administrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ADMINISTR__Sucur__4222D4EF">
+          <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+          <End Role="ADMINISTRADORXSUCURSAL" Type="Self.ADMINISTRADORXSUCURSAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="ADMINISTRADORXSUCURSAL">
+              <PropertyRef Name="Sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EMPLEADO__Sucurs__4AB81AF0">
+          <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="Sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__CasaF__3E52440B">
+          <End Role="CASAFARMACEUTICA" Type="Self.CASAFARMACEUTICA" Multiplicity="1" />
+          <End Role="MEDICAMENTO" Type="Self.MEDICAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CASAFARMACEUTICA">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="MEDICAMENTO">
+              <PropertyRef Name="CasaFarmaceutica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__Medic__46E78A0C">
+          <End Role="MEDICAMENTO" Type="Self.MEDICAMENTO" Multiplicity="1" />
+          <End Role="MEDICAMENTOXPEDIDO" Type="Self.MEDICAMENTOXPEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENTO">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="MEDICAMENTOXPEDIDO">
+              <PropertyRef Name="Medicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__Medic__48CFD27E">
+          <End Role="MEDICAMENTO" Type="Self.MEDICAMENTO" Multiplicity="1" />
+          <End Role="MEDICAMENTOXRECETA" Type="Self.MEDICAMENTOXRECETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENTO">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="MEDICAMENTOXRECETA">
+              <PropertyRef Name="Medicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__Pedid__45F365D3">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="1" />
+          <End Role="MEDICAMENTOXPEDIDO" Type="Self.MEDICAMENTOXPEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="Numero" />
+            </Principal>
+            <Dependent Role="MEDICAMENTOXPEDIDO">
+              <PropertyRef Name="Pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__Recet__47DBAE45">
+          <End Role="RECETA" Type="Self.RECETA" Multiplicity="1" />
+          <End Role="MEDICAMENTOXRECETA" Type="Self.MEDICAMENTOXRECETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECETA">
+              <PropertyRef Name="Numero" />
+            </Principal>
+            <Dependent Role="MEDICAMENTOXRECETA">
+              <PropertyRef Name="Receta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PADECIMIE__Clien__4316F928">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="PADECIMIENTO" Type="Self.PADECIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="PADECIMIENTO">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PEDIDO__Cliente__403A8C7D">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PEDIDO__Sucursal__3F466844">
+          <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="Sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ROLXDEPEN__Depen__44FF419A">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="ROLXDEPENDIENTE" Type="Self.ROLXDEPENDIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="ROLXDEPENDIENTE">
+              <PropertyRef Name="Dependiente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ROLXDEPENDI__Rol__440B1D61">
+          <End Role="ROL" Type="Self.ROL" Multiplicity="1" />
+          <End Role="ROLXDEPENDIENTE" Type="Self.ROLXDEPENDIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="ROLXDEPENDIENTE">
+              <PropertyRef Name="Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SUCURSAL__Compañ__4BAC3F29">
+          <End Role="COMPAÑIA" Type="Self.COMPAÑIA" Multiplicity="1" />
+          <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPAÑIA">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="SUCURSAL">
+              <PropertyRef Name="Compañia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TELEFONOX__Clien__49C3F6B7">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="TELEFONOXCLIENTE" Type="Self.TELEFONOXCLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="TELEFONOXCLIENTE">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="GasStationPharmacyModelStoreContainer">
-          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADMINISTRADORXSUCURSAL" EntityType="Self.ADMINISTRADORXSUCURSAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CASAFARMACEUTICA" EntityType="Self.CASAFARMACEUTICA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMPAÑIA" EntityType="Self.COMPAÑIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEDICAMENTO" EntityType="Self.MEDICAMENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEDICAMENTOXPEDIDO" EntityType="Self.MEDICAMENTOXPEDIDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEDICAMENTOXRECETA" EntityType="Self.MEDICAMENTOXRECETA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PADECIMIENTO" EntityType="Self.PADECIMIENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PEDIDO" EntityType="Self.PEDIDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RECETA" EntityType="Self.RECETA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROL" EntityType="Self.ROL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLXDEPENDIENTE" EntityType="Self.ROLXDEPENDIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUCURSAL" EntityType="Self.SUCURSAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TELEFONOXCLIENTE" EntityType="Self.TELEFONOXCLIENTE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ADMINISTR__Admin__412EB0B6" Association="Self.FK__ADMINISTR__Admin__412EB0B6">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="ADMINISTRADORXSUCURSAL" EntitySet="ADMINISTRADORXSUCURSAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ADMINISTR__Sucur__4222D4EF" Association="Self.FK__ADMINISTR__Sucur__4222D4EF">
+            <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+            <End Role="ADMINISTRADORXSUCURSAL" EntitySet="ADMINISTRADORXSUCURSAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EMPLEADO__Sucurs__4AB81AF0" Association="Self.FK__EMPLEADO__Sucurs__4AB81AF0">
+            <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__CasaF__3E52440B" Association="Self.FK__MEDICAMEN__CasaF__3E52440B">
+            <End Role="CASAFARMACEUTICA" EntitySet="CASAFARMACEUTICA" />
+            <End Role="MEDICAMENTO" EntitySet="MEDICAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__Medic__46E78A0C" Association="Self.FK__MEDICAMEN__Medic__46E78A0C">
+            <End Role="MEDICAMENTO" EntitySet="MEDICAMENTO" />
+            <End Role="MEDICAMENTOXPEDIDO" EntitySet="MEDICAMENTOXPEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__Medic__48CFD27E" Association="Self.FK__MEDICAMEN__Medic__48CFD27E">
+            <End Role="MEDICAMENTO" EntitySet="MEDICAMENTO" />
+            <End Role="MEDICAMENTOXRECETA" EntitySet="MEDICAMENTOXRECETA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__Pedid__45F365D3" Association="Self.FK__MEDICAMEN__Pedid__45F365D3">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="MEDICAMENTOXPEDIDO" EntitySet="MEDICAMENTOXPEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__Recet__47DBAE45" Association="Self.FK__MEDICAMEN__Recet__47DBAE45">
+            <End Role="RECETA" EntitySet="RECETA" />
+            <End Role="MEDICAMENTOXRECETA" EntitySet="MEDICAMENTOXRECETA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PADECIMIE__Clien__4316F928" Association="Self.FK__PADECIMIE__Clien__4316F928">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="PADECIMIENTO" EntitySet="PADECIMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PEDIDO__Cliente__403A8C7D" Association="Self.FK__PEDIDO__Cliente__403A8C7D">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PEDIDO__Sucursal__3F466844" Association="Self.FK__PEDIDO__Sucursal__3F466844">
+            <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ROLXDEPEN__Depen__44FF419A" Association="Self.FK__ROLXDEPEN__Depen__44FF419A">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="ROLXDEPENDIENTE" EntitySet="ROLXDEPENDIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ROLXDEPENDI__Rol__440B1D61" Association="Self.FK__ROLXDEPENDI__Rol__440B1D61">
+            <End Role="ROL" EntitySet="ROL" />
+            <End Role="ROLXDEPENDIENTE" EntitySet="ROLXDEPENDIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SUCURSAL__Compañ__4BAC3F29" Association="Self.FK__SUCURSAL__Compañ__4BAC3F29">
+            <End Role="COMPAÑIA" EntitySet="COMPAÑIA" />
+            <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TELEFONOX__Clien__49C3F6B7" Association="Self.FK__TELEFONOX__Clien__49C3F6B7">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="TELEFONOXCLIENTE" EntitySet="TELEFONOXCLIENTE" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GasStationPharmacyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="USUARIO">
-          <Key>
-            <PropertyRef Name="email" />
-          </Key>
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="tipoUsuario" Type="Int32" Nullable="false" />
-          <Property Name="prueba" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityContainer Name="GasStationPharmacyEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="USUARIOS" EntityType="Self.USUARIO" />
+          <EntitySet Name="ADMINISTRADORXSUCURSALs" EntityType="GasStationPharmacyModel.ADMINISTRADORXSUCURSAL" />
+          <EntitySet Name="CASAFARMACEUTICAs" EntityType="GasStationPharmacyModel.CASAFARMACEUTICA" />
+          <EntitySet Name="CLIENTEs" EntityType="GasStationPharmacyModel.CLIENTE" />
+          <EntitySet Name="COMPAÑIA" EntityType="GasStationPharmacyModel.COMPAÑIA" />
+          <EntitySet Name="EMPLEADOes" EntityType="GasStationPharmacyModel.EMPLEADO" />
+          <EntitySet Name="MEDICAMENTOes" EntityType="GasStationPharmacyModel.MEDICAMENTO" />
+          <EntitySet Name="MEDICAMENTOXPEDIDOes" EntityType="GasStationPharmacyModel.MEDICAMENTOXPEDIDO" />
+          <EntitySet Name="MEDICAMENTOXRECETAs" EntityType="GasStationPharmacyModel.MEDICAMENTOXRECETA" />
+          <EntitySet Name="PADECIMIENTOes" EntityType="GasStationPharmacyModel.PADECIMIENTO" />
+          <EntitySet Name="PEDIDOes" EntityType="GasStationPharmacyModel.PEDIDO" />
+          <EntitySet Name="RECETAs" EntityType="GasStationPharmacyModel.RECETA" />
+          <EntitySet Name="ROLs" EntityType="GasStationPharmacyModel.ROL" />
+          <EntitySet Name="ROLXDEPENDIENTEs" EntityType="GasStationPharmacyModel.ROLXDEPENDIENTE" />
+          <EntitySet Name="SUCURSALs" EntityType="GasStationPharmacyModel.SUCURSAL" />
+          <EntitySet Name="TELEFONOXCLIENTEs" EntityType="GasStationPharmacyModel.TELEFONOXCLIENTE" />
+          <AssociationSet Name="FK__ADMINISTR__Admin__4222D4EF" Association="GasStationPharmacyModel.FK__ADMINISTR__Admin__4222D4EF">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="ADMINISTRADORXSUCURSAL" EntitySet="ADMINISTRADORXSUCURSALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ADMINISTR__Sucur__4316F928" Association="GasStationPharmacyModel.FK__ADMINISTR__Sucur__4316F928">
+            <End Role="SUCURSAL" EntitySet="SUCURSALs" />
+            <End Role="ADMINISTRADORXSUCURSAL" EntitySet="ADMINISTRADORXSUCURSALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__CasaF__3F466844" Association="GasStationPharmacyModel.FK__MEDICAMEN__CasaF__3F466844">
+            <End Role="CASAFARMACEUTICA" EntitySet="CASAFARMACEUTICAs" />
+            <End Role="MEDICAMENTO" EntitySet="MEDICAMENTOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PADECIMIE__Clien__440B1D61" Association="GasStationPharmacyModel.FK__PADECIMIE__Clien__440B1D61">
+            <End Role="CLIENTE" EntitySet="CLIENTEs" />
+            <End Role="PADECIMIENTO" EntitySet="PADECIMIENTOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PEDIDO__Cliente__412EB0B6" Association="GasStationPharmacyModel.FK__PEDIDO__Cliente__412EB0B6">
+            <End Role="CLIENTE" EntitySet="CLIENTEs" />
+            <End Role="PEDIDO" EntitySet="PEDIDOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ROLXDEPEN__Depen__45F365D3" Association="GasStationPharmacyModel.FK__ROLXDEPEN__Depen__45F365D3">
+            <End Role="CLIENTE" EntitySet="CLIENTEs" />
+            <End Role="ROLXDEPENDIENTE" EntitySet="ROLXDEPENDIENTEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TELEFONOX__Clien__4AB81AF0" Association="GasStationPharmacyModel.FK__TELEFONOX__Clien__4AB81AF0">
+            <End Role="CLIENTE" EntitySet="CLIENTEs" />
+            <End Role="TELEFONOXCLIENTE" EntitySet="TELEFONOXCLIENTEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EMPLEADO__Sucurs__3E52440B" Association="GasStationPharmacyModel.FK__EMPLEADO__Sucurs__3E52440B">
+            <End Role="SUCURSAL" EntitySet="SUCURSALs" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__Medic__47DBAE45" Association="GasStationPharmacyModel.FK__MEDICAMEN__Medic__47DBAE45">
+            <End Role="MEDICAMENTO" EntitySet="MEDICAMENTOes" />
+            <End Role="MEDICAMENTOXPEDIDO" EntitySet="MEDICAMENTOXPEDIDOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__Medic__49C3F6B7" Association="GasStationPharmacyModel.FK__MEDICAMEN__Medic__49C3F6B7">
+            <End Role="MEDICAMENTO" EntitySet="MEDICAMENTOes" />
+            <End Role="MEDICAMENTOXRECETA" EntitySet="MEDICAMENTOXRECETAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__Pedid__46E78A0C" Association="GasStationPharmacyModel.FK__MEDICAMEN__Pedid__46E78A0C">
+            <End Role="PEDIDO" EntitySet="PEDIDOes" />
+            <End Role="MEDICAMENTOXPEDIDO" EntitySet="MEDICAMENTOXPEDIDOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MEDICAMEN__Recet__48CFD27E" Association="GasStationPharmacyModel.FK__MEDICAMEN__Recet__48CFD27E">
+            <End Role="RECETA" EntitySet="RECETAs" />
+            <End Role="MEDICAMENTOXRECETA" EntitySet="MEDICAMENTOXRECETAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PEDIDO__Sucursal__403A8C7D" Association="GasStationPharmacyModel.FK__PEDIDO__Sucursal__403A8C7D">
+            <End Role="SUCURSAL" EntitySet="SUCURSALs" />
+            <End Role="PEDIDO" EntitySet="PEDIDOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ROLXDEPENDI__Rol__44FF419A" Association="GasStationPharmacyModel.FK__ROLXDEPENDI__Rol__44FF419A">
+            <End Role="ROL" EntitySet="ROLs" />
+            <End Role="ROLXDEPENDIENTE" EntitySet="ROLXDEPENDIENTEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SUCURSAL__Compañ__5AEE82B9" Association="GasStationPharmacyModel.FK__SUCURSAL__Compañ__5AEE82B9">
+            <End Role="COMPAÑIA" EntitySet="COMPAÑIA" />
+            <End Role="SUCURSAL" EntitySet="SUCURSALs" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="ADMINISTRADORXSUCURSAL">
+          <Key>
+            <PropertyRef Name="Administrador" />
+            <PropertyRef Name="Sucursal" />
+          </Key>
+          <Property Name="Administrador" Type="Int32" Nullable="false" />
+          <Property Name="Sucursal" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EMPLEADO" Relationship="GasStationPharmacyModel.FK__ADMINISTR__Admin__4222D4EF" FromRole="ADMINISTRADORXSUCURSAL" ToRole="EMPLEADO" />
+          <NavigationProperty Name="SUCURSAL1" Relationship="GasStationPharmacyModel.FK__ADMINISTR__Sucur__4316F928" FromRole="ADMINISTRADORXSUCURSAL" ToRole="SUCURSAL" />
+        </EntityType>
+        <EntityType Name="CASAFARMACEUTICA">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sede" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="MEDICAMENTOes" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__CasaF__3F466844" FromRole="CASAFARMACEUTICA" ToRole="MEDICAMENTO" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="Cedula" />
+          </Key>
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Nombre1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Provincia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Cuidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Señas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Prioridad" Type="Int32" Nullable="false" />
+          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PADECIMIENTOes" Relationship="GasStationPharmacyModel.FK__PADECIMIE__Clien__440B1D61" FromRole="CLIENTE" ToRole="PADECIMIENTO" />
+          <NavigationProperty Name="PEDIDOes" Relationship="GasStationPharmacyModel.FK__PEDIDO__Cliente__412EB0B6" FromRole="CLIENTE" ToRole="PEDIDO" />
+          <NavigationProperty Name="ROLXDEPENDIENTEs" Relationship="GasStationPharmacyModel.FK__ROLXDEPEN__Depen__45F365D3" FromRole="CLIENTE" ToRole="ROLXDEPENDIENTE" />
+          <NavigationProperty Name="TELEFONOXCLIENTEs" Relationship="GasStationPharmacyModel.FK__TELEFONOX__Clien__4AB81AF0" FromRole="CLIENTE" ToRole="TELEFONOXCLIENTE" />
+        </EntityType>
+        <EntityType Name="COMPAÑIA">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SUCURSALs" Relationship="GasStationPharmacyModel.FK__SUCURSAL__Compañ__5AEE82B9" FromRole="COMPAÑIA" ToRole="SUCURSAL" />
+          <Property Name="Sede" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="Cedula" />
+          </Key>
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Nombre1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Provincia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Cuidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Señas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Sucursal" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ADMINISTRADORXSUCURSALs" Relationship="GasStationPharmacyModel.FK__ADMINISTR__Admin__4222D4EF" FromRole="EMPLEADO" ToRole="ADMINISTRADORXSUCURSAL" />
+          <NavigationProperty Name="SUCURSAL1" Relationship="GasStationPharmacyModel.FK__EMPLEADO__Sucurs__3E52440B" FromRole="EMPLEADO" ToRole="SUCURSAL" />
+        </EntityType>
+        <EntityType Name="MEDICAMENTO">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prescripcion" Type="Boolean" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="CasaFarmaceutica" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CASAFARMACEUTICA1" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__CasaF__3F466844" FromRole="MEDICAMENTO" ToRole="CASAFARMACEUTICA" />
+          <NavigationProperty Name="MEDICAMENTOXPEDIDOes" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__Medic__47DBAE45" FromRole="MEDICAMENTO" ToRole="MEDICAMENTOXPEDIDO" />
+          <NavigationProperty Name="MEDICAMENTOXRECETAs" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__Medic__49C3F6B7" FromRole="MEDICAMENTO" ToRole="MEDICAMENTOXRECETA" />
+        </EntityType>
+        <EntityType Name="MEDICAMENTOXPEDIDO">
+          <Key>
+            <PropertyRef Name="Pedido" />
+            <PropertyRef Name="Medicamento" />
+          </Key>
+          <Property Name="Pedido" Type="Int32" Nullable="false" />
+          <Property Name="Medicamento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="MEDICAMENTO1" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__Medic__47DBAE45" FromRole="MEDICAMENTOXPEDIDO" ToRole="MEDICAMENTO" />
+          <NavigationProperty Name="PEDIDO1" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__Pedid__46E78A0C" FromRole="MEDICAMENTOXPEDIDO" ToRole="PEDIDO" />
+        </EntityType>
+        <EntityType Name="MEDICAMENTOXRECETA">
+          <Key>
+            <PropertyRef Name="Receta" />
+            <PropertyRef Name="Medicamento" />
+          </Key>
+          <Property Name="Receta" Type="Int32" Nullable="false" />
+          <Property Name="Medicamento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="MEDICAMENTO1" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__Medic__49C3F6B7" FromRole="MEDICAMENTOXRECETA" ToRole="MEDICAMENTO" />
+          <NavigationProperty Name="RECETA1" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__Recet__48CFD27E" FromRole="MEDICAMENTOXRECETA" ToRole="RECETA" />
+        </EntityType>
+        <EntityType Name="PADECIMIENTO">
+          <Key>
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Padecimiento1" />
+          </Key>
+          <Property Name="Cliente" Type="Int32" Nullable="false" />
+          <Property Name="Padecimiento1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CLIENTE1" Relationship="GasStationPharmacyModel.FK__PADECIMIE__Clien__440B1D61" FromRole="PADECIMIENTO" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="PEDIDO">
+          <Key>
+            <PropertyRef Name="Numero" />
+          </Key>
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaRecojo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Telefono" Type="Int32" />
+          <Property Name="Sucursal" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cliente" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CLIENTE1" Relationship="GasStationPharmacyModel.FK__PEDIDO__Cliente__412EB0B6" FromRole="PEDIDO" ToRole="CLIENTE" />
+          <NavigationProperty Name="MEDICAMENTOXPEDIDOes" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__Pedid__46E78A0C" FromRole="PEDIDO" ToRole="MEDICAMENTOXPEDIDO" />
+          <NavigationProperty Name="SUCURSAL1" Relationship="GasStationPharmacyModel.FK__PEDIDO__Sucursal__403A8C7D" FromRole="PEDIDO" ToRole="SUCURSAL" />
+        </EntityType>
+        <EntityType Name="RECETA">
+          <Key>
+            <PropertyRef Name="Numero" />
+          </Key>
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="MEDICAMENTOXRECETAs" Relationship="GasStationPharmacyModel.FK__MEDICAMEN__Recet__48CFD27E" FromRole="RECETA" ToRole="MEDICAMENTOXRECETA" />
+        </EntityType>
+        <EntityType Name="ROL">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ROLXDEPENDIENTEs" Relationship="GasStationPharmacyModel.FK__ROLXDEPENDI__Rol__44FF419A" FromRole="ROL" ToRole="ROLXDEPENDIENTE" />
+        </EntityType>
+        <EntityType Name="ROLXDEPENDIENTE">
+          <Key>
+            <PropertyRef Name="Dependiente" />
+            <PropertyRef Name="Rol" />
+          </Key>
+          <Property Name="Dependiente" Type="Int32" Nullable="false" />
+          <Property Name="Rol" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="GasStationPharmacyModel.FK__ROLXDEPEN__Depen__45F365D3" FromRole="ROLXDEPENDIENTE" ToRole="CLIENTE" />
+          <NavigationProperty Name="ROL1" Relationship="GasStationPharmacyModel.FK__ROLXDEPENDI__Rol__44FF419A" FromRole="ROLXDEPENDIENTE" ToRole="ROL" />
+        </EntityType>
+        <EntityType Name="SUCURSAL">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Provincia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Cuidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Señas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Compañia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ADMINISTRADORXSUCURSALs" Relationship="GasStationPharmacyModel.FK__ADMINISTR__Sucur__4316F928" FromRole="SUCURSAL" ToRole="ADMINISTRADORXSUCURSAL" />
+          <NavigationProperty Name="EMPLEADOes" Relationship="GasStationPharmacyModel.FK__EMPLEADO__Sucurs__3E52440B" FromRole="SUCURSAL" ToRole="EMPLEADO" />
+          <NavigationProperty Name="PEDIDOes" Relationship="GasStationPharmacyModel.FK__PEDIDO__Sucursal__403A8C7D" FromRole="SUCURSAL" ToRole="PEDIDO" />
+          <NavigationProperty Name="COMPAÑIA1" Relationship="GasStationPharmacyModel.FK__SUCURSAL__Compañ__5AEE82B9" FromRole="SUCURSAL" ToRole="COMPAÑIA" />
+        </EntityType>
+        <EntityType Name="TELEFONOXCLIENTE">
+          <Key>
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Telefono" />
+          </Key>
+          <Property Name="Cliente" Type="Int32" Nullable="false" />
+          <Property Name="Telefono" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CLIENTE1" Relationship="GasStationPharmacyModel.FK__TELEFONOX__Clien__4AB81AF0" FromRole="TELEFONOXCLIENTE" ToRole="CLIENTE" />
+        </EntityType>
+        <Association Name="FK__ADMINISTR__Admin__4222D4EF">
+          <End Type="GasStationPharmacyModel.EMPLEADO" Role="EMPLEADO" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.ADMINISTRADORXSUCURSAL" Role="ADMINISTRADORXSUCURSAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="ADMINISTRADORXSUCURSAL">
+              <PropertyRef Name="Administrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ADMINISTR__Sucur__4316F928">
+          <End Type="GasStationPharmacyModel.SUCURSAL" Role="SUCURSAL" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.ADMINISTRADORXSUCURSAL" Role="ADMINISTRADORXSUCURSAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="ADMINISTRADORXSUCURSAL">
+              <PropertyRef Name="Sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__CasaF__3F466844">
+          <End Type="GasStationPharmacyModel.CASAFARMACEUTICA" Role="CASAFARMACEUTICA" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.MEDICAMENTO" Role="MEDICAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CASAFARMACEUTICA">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="MEDICAMENTO">
+              <PropertyRef Name="CasaFarmaceutica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PADECIMIE__Clien__440B1D61">
+          <End Type="GasStationPharmacyModel.CLIENTE" Role="CLIENTE" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.PADECIMIENTO" Role="PADECIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="PADECIMIENTO">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PEDIDO__Cliente__412EB0B6">
+          <End Type="GasStationPharmacyModel.CLIENTE" Role="CLIENTE" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.PEDIDO" Role="PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ROLXDEPEN__Depen__45F365D3">
+          <End Type="GasStationPharmacyModel.CLIENTE" Role="CLIENTE" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.ROLXDEPENDIENTE" Role="ROLXDEPENDIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="ROLXDEPENDIENTE">
+              <PropertyRef Name="Dependiente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TELEFONOX__Clien__4AB81AF0">
+          <End Type="GasStationPharmacyModel.CLIENTE" Role="CLIENTE" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.TELEFONOXCLIENTE" Role="TELEFONOXCLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="TELEFONOXCLIENTE">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EMPLEADO__Sucurs__3E52440B">
+          <End Type="GasStationPharmacyModel.SUCURSAL" Role="SUCURSAL" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.EMPLEADO" Role="EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="Sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__Medic__47DBAE45">
+          <End Type="GasStationPharmacyModel.MEDICAMENTO" Role="MEDICAMENTO" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.MEDICAMENTOXPEDIDO" Role="MEDICAMENTOXPEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENTO">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="MEDICAMENTOXPEDIDO">
+              <PropertyRef Name="Medicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__Medic__49C3F6B7">
+          <End Type="GasStationPharmacyModel.MEDICAMENTO" Role="MEDICAMENTO" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.MEDICAMENTOXRECETA" Role="MEDICAMENTOXRECETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENTO">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="MEDICAMENTOXRECETA">
+              <PropertyRef Name="Medicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__Pedid__46E78A0C">
+          <End Type="GasStationPharmacyModel.PEDIDO" Role="PEDIDO" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.MEDICAMENTOXPEDIDO" Role="MEDICAMENTOXPEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="Numero" />
+            </Principal>
+            <Dependent Role="MEDICAMENTOXPEDIDO">
+              <PropertyRef Name="Pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MEDICAMEN__Recet__48CFD27E">
+          <End Type="GasStationPharmacyModel.RECETA" Role="RECETA" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.MEDICAMENTOXRECETA" Role="MEDICAMENTOXRECETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECETA">
+              <PropertyRef Name="Numero" />
+            </Principal>
+            <Dependent Role="MEDICAMENTOXRECETA">
+              <PropertyRef Name="Receta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PEDIDO__Sucursal__403A8C7D">
+          <End Type="GasStationPharmacyModel.SUCURSAL" Role="SUCURSAL" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.PEDIDO" Role="PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCURSAL">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="Sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ROLXDEPENDI__Rol__44FF419A">
+          <End Type="GasStationPharmacyModel.ROL" Role="ROL" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.ROLXDEPENDIENTE" Role="ROLXDEPENDIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="ROLXDEPENDIENTE">
+              <PropertyRef Name="Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SUCURSAL__Compañ__5AEE82B9">
+          <End Type="GasStationPharmacyModel.COMPAÑIA" Role="COMPAÑIA" Multiplicity="1" />
+          <End Type="GasStationPharmacyModel.SUCURSAL" Role="SUCURSAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPAÑIA">
+              <PropertyRef Name="Nombre" />
+            </Principal>
+            <Dependent Role="SUCURSAL">
+              <PropertyRef Name="Compañia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GasStationPharmacyModelStoreContainer" CdmEntityContainer="GasStationPharmacyEntities">
-          <EntitySetMapping Name="USUARIOS">
-            <EntityTypeMapping TypeName="GasStationPharmacyModel.USUARIO">
-              <MappingFragment StoreEntitySet="USUARIOS">
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
-                <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
-                <ScalarProperty Name="prueba" ColumnName="prueba" />
+        <EntitySetMapping Name="ADMINISTRADORXSUCURSALs">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.ADMINISTRADORXSUCURSAL">
+              <MappingFragment StoreEntitySet="ADMINISTRADORXSUCURSAL">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="Administrador" ColumnName="Administrador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CASAFARMACEUTICAs">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.CASAFARMACEUTICA">
+              <MappingFragment StoreEntitySet="CASAFARMACEUTICA">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Sede" ColumnName="Sede" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTEs">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Señas" ColumnName="Señas" />
+                <ScalarProperty Name="Cuidad" ColumnName="Cuidad" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+                <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPAÑIA">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.COMPAÑIA">
+              <MappingFragment StoreEntitySet="COMPAÑIA">
+                <ScalarProperty Name="Sede" ColumnName="Sede" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLEADOes">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.EMPLEADO">
+              <MappingFragment StoreEntitySet="EMPLEADO">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Señas" ColumnName="Señas" />
+                <ScalarProperty Name="Cuidad" ColumnName="Cuidad" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+                <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICAMENTOes">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.MEDICAMENTO">
+              <MappingFragment StoreEntitySet="MEDICAMENTO">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="CasaFarmaceutica" ColumnName="CasaFarmaceutica" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Prescripcion" ColumnName="Prescripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICAMENTOXPEDIDOes">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.MEDICAMENTOXPEDIDO">
+              <MappingFragment StoreEntitySet="MEDICAMENTOXPEDIDO">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Medicamento" ColumnName="Medicamento" />
+                <ScalarProperty Name="Pedido" ColumnName="Pedido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICAMENTOXRECETAs">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.MEDICAMENTOXRECETA">
+              <MappingFragment StoreEntitySet="MEDICAMENTOXRECETA">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Medicamento" ColumnName="Medicamento" />
+                <ScalarProperty Name="Receta" ColumnName="Receta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PADECIMIENTOes">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.PADECIMIENTO">
+              <MappingFragment StoreEntitySet="PADECIMIENTO">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Padecimiento1" ColumnName="Padecimiento" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PEDIDOes">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.PEDIDO">
+              <MappingFragment StoreEntitySet="PEDIDO">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="FechaRecojo" ColumnName="FechaRecojo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECETAs">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.RECETA">
+              <MappingFragment StoreEntitySet="RECETA">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLs">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.ROL">
+              <MappingFragment StoreEntitySet="ROL">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLXDEPENDIENTEs">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.ROLXDEPENDIENTE">
+              <MappingFragment StoreEntitySet="ROLXDEPENDIENTE">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Dependiente" ColumnName="Dependiente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUCURSALs">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.SUCURSAL">
+              <MappingFragment StoreEntitySet="SUCURSAL">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Compañia" ColumnName="Compañia" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Señas" ColumnName="Señas" />
+                <ScalarProperty Name="Cuidad" ColumnName="Cuidad" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TELEFONOXCLIENTEs">
+            <EntityTypeMapping TypeName="GasStationPharmacyModel.TELEFONOXCLIENTE">
+              <MappingFragment StoreEntitySet="TELEFONOXCLIENTE">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

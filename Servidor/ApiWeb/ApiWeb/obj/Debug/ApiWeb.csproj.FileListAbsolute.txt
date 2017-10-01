@@ -111,3 +111,4 @@ C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\ApiWeb\ApiW
 C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\ApiWeb\ApiWeb\bin\System.Web.Cors.dll
 C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\ApiWeb\ApiWeb\bin\System.Web.Http.Cors.dll
 C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\ApiWeb\ApiWeb\bin\System.Web.Http.Cors.xml
+C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\ApiWeb\ApiWeb\bin\Json.NET.Web.dll

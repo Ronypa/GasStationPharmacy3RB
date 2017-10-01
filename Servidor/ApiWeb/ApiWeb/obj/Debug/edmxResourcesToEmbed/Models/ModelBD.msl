@@ -1,13 +1,168 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="GasStationPharmacyModelStoreContainer" CdmEntityContainer="GasStationPharmacyEntities">
-    <EntitySetMapping Name="USUARIOS">
-      <EntityTypeMapping TypeName="GasStationPharmacyModel.USUARIO">
-        <MappingFragment StoreEntitySet="USUARIOS">
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
-          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
-          <ScalarProperty Name="prueba" ColumnName="prueba" />
+    <EntitySetMapping Name="ADMINISTRADORXSUCURSALs">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.ADMINISTRADORXSUCURSAL">
+        <MappingFragment StoreEntitySet="ADMINISTRADORXSUCURSAL">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="Administrador" ColumnName="Administrador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CASAFARMACEUTICAs">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.CASAFARMACEUTICA">
+        <MappingFragment StoreEntitySet="CASAFARMACEUTICA">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Sede" ColumnName="Sede" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTEs">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Señas" ColumnName="Señas" />
+          <ScalarProperty Name="Cuidad" ColumnName="Cuidad" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+          <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPAÑIA">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.COMPAÑIA">
+        <MappingFragment StoreEntitySet="COMPAÑIA">
+          <ScalarProperty Name="Sede" ColumnName="Sede" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADOes">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.EMPLEADO">
+        <MappingFragment StoreEntitySet="EMPLEADO">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Señas" ColumnName="Señas" />
+          <ScalarProperty Name="Cuidad" ColumnName="Cuidad" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+          <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICAMENTOes">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.MEDICAMENTO">
+        <MappingFragment StoreEntitySet="MEDICAMENTO">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="CasaFarmaceutica" ColumnName="CasaFarmaceutica" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Prescripcion" ColumnName="Prescripcion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICAMENTOXPEDIDOes">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.MEDICAMENTOXPEDIDO">
+        <MappingFragment StoreEntitySet="MEDICAMENTOXPEDIDO">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Medicamento" ColumnName="Medicamento" />
+          <ScalarProperty Name="Pedido" ColumnName="Pedido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICAMENTOXRECETAs">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.MEDICAMENTOXRECETA">
+        <MappingFragment StoreEntitySet="MEDICAMENTOXRECETA">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Medicamento" ColumnName="Medicamento" />
+          <ScalarProperty Name="Receta" ColumnName="Receta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PADECIMIENTOes">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.PADECIMIENTO">
+        <MappingFragment StoreEntitySet="PADECIMIENTO">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Padecimiento1" ColumnName="Padecimiento" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PEDIDOes">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.PEDIDO">
+        <MappingFragment StoreEntitySet="PEDIDO">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="FechaRecojo" ColumnName="FechaRecojo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECETAs">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.RECETA">
+        <MappingFragment StoreEntitySet="RECETA">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLs">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.ROL">
+        <MappingFragment StoreEntitySet="ROL">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLXDEPENDIENTEs">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.ROLXDEPENDIENTE">
+        <MappingFragment StoreEntitySet="ROLXDEPENDIENTE">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Dependiente" ColumnName="Dependiente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUCURSALs">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.SUCURSAL">
+        <MappingFragment StoreEntitySet="SUCURSAL">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Compañia" ColumnName="Compañia" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Señas" ColumnName="Señas" />
+          <ScalarProperty Name="Cuidad" ColumnName="Cuidad" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TELEFONOXCLIENTEs">
+      <EntityTypeMapping TypeName="GasStationPharmacyModel.TELEFONOXCLIENTE">
+        <MappingFragment StoreEntitySet="TELEFONOXCLIENTE">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
