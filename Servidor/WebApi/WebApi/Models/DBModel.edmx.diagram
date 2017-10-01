@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="abc4a94c698d4369b6374156807200b4" Name="Diagram1" ZoomLevel="87">
+        <EntityTypeShape EntityType="GasStationPharmacyModel.ADMINISTRADORXSUCURSAL" Width="1.5" PointX="7.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.CASAFARMACEUTICA" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.CLIENTE" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.COMPAÑIA" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.EMPLEADO" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.MEDICAMENTO" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.MEDICAMENTOXPEDIDO" Width="1.5" PointX="7.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.MEDICAMENTOXRECETA" Width="1.5" PointX="7.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.PADECIMIENTO" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.PEDIDO" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.RECETA" Width="1.5" PointX="5.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.ROL" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.ROLXDEPENDIENTE" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.SUCURSAL" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationPharmacyModel.TELEFONOXCLIENTE" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__ADMINISTR__Admin__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__ADMINISTR__Sucur__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__MEDICAMEN__CasaF__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__PADECIMIE__Clien__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__PEDIDO__Cliente__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__ROLXDEPEN__Depen__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__TELEFONOX__Clien__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__SUCURSAL__Compañ__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__EMPLEADO__Sucurs__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__MEDICAMEN__Medic__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__MEDICAMEN__Medic__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__MEDICAMEN__Pedid__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__MEDICAMEN__Recet__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__PEDIDO__Sucursal__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationPharmacyModel.FK__ROLXDEPENDI__Rol__440B1D61" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
