@@ -1,254 +1,118 @@
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\ApplicationInsights.config
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csc.exe
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csc.exe.config
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csc.rsp
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csi.exe
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csi.exe.config
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csi.rsp
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.AppContext.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Console.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Diagnostics.Process.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.Compression.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.Pipes.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.AccessControl.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Claims.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Principal.Windows.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Threading.Thread.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.ValueTuple.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.XPath.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\vbc.exe
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\vbc.exe.config
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\vbc.rsp
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\VBCSCompiler.exe
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\WebApi.dll.config
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\WebApi.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\WebApi.pdb
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Antlr3.Runtime.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.SqlServer.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.Web.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Newtonsoft.Json.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Owin.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Net.Http.Formatting.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Helpers.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.Owin.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.WebHost.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Mvc.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Optimization.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Razor.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Razor.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\WebGrease.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.SqlServer.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.Owin.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Newtonsoft.Json.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Net.Http.Formatting.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Helpers.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.WebHost.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Mvc.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Optimization.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Razor.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Razor.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Antlr3.Runtime.pdb
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.Web.xml
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Net.Http.Formatting.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Helpers.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Http.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Http.WebHost.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Mvc.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Optimization.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Razor.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.WebPages.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.WebPages.Deployment.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.csprojResolveAssemblyReference.cache
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.dll
-C:\Users\Raul AQ\Desktop\Proyecto1-BD\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.pdb
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\ApplicationInsights.config
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csc.exe
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csc.exe.config
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csc.rsp
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csi.exe
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csi.exe.config
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\csi.rsp
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.AppContext.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Console.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Diagnostics.Process.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.Compression.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.IO.Pipes.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.AccessControl.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Claims.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Principal.Windows.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Threading.Thread.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.ValueTuple.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.XPath.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\vbc.exe
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\vbc.exe.config
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\vbc.rsp
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\VBCSCompiler.exe
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\WebApi.dll.config
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\WebApi.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\WebApi.pdb
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Antlr3.Runtime.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.SqlServer.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.Web.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Newtonsoft.Json.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Owin.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Net.Http.Formatting.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Helpers.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.Owin.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.WebHost.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Mvc.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Optimization.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Razor.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Razor.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\WebGrease.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\EntityFramework.SqlServer.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.Owin.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Newtonsoft.Json.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Net.Http.Formatting.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Helpers.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Http.WebHost.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Mvc.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Optimization.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.Razor.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Razor.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Antlr3.Runtime.pdb
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\Microsoft.AI.Web.xml
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Net.Http.Formatting.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Helpers.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Http.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Http.WebHost.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Mvc.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Optimization.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.Razor.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.WebPages.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.WebPages.Deployment.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.csprojResolveAssemblyReference.cache
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.dll
-C:\Users\Ronny\Desktop\Proyecto\GasStationPharmacy3RB\Servidor\WebApi\WebApi\obj\Debug\WebApi.pdb
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\ApplicationInsights.config
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\csc.exe
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\csc.exe.config
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\csc.rsp
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\csi.exe
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\csi.exe.config
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\csi.rsp
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.AppContext.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Console.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.IO.Compression.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Claims.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.ValueTuple.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\vbc.exe
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\vbc.exe.config
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\vbc.rsp
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\VBCSCompiler.exe
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\WebApi.dll.config
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\WebApi.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\WebApi.pdb
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Antlr3.Runtime.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.Web.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Newtonsoft.Json.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Net.Http.Formatting.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Helpers.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Http.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Http.WebHost.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Mvc.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Optimization.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Razor.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.WebPages.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\WebGrease.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Newtonsoft.Json.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Net.Http.Formatting.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Helpers.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Http.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Http.WebHost.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Mvc.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Optimization.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Razor.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.WebPages.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.WebPages.Razor.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Antlr3.Runtime.pdb
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AI.Web.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Web.Http.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Web.Razor.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\obj\Debug\WebApi.csprojResolveAssemblyReference.cache
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\obj\Debug\WebApi.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\obj\Debug\WebApi.pdb
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\EntityFramework.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\EntityFramework.SqlServer.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\EntityFramework.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\EntityFramework.SqlServer.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.Owin.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Owin.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\Microsoft.Owin.xml
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Cors.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Http.Cors.dll
+C:\Users\Raul AQ\Desktop\Proyecto Bases de Datos\Proyecto1-BasesDatos\Servidor\WebApi\WebApi\bin\System.Web.Http.Cors.xml

@@ -1,4 +1,4 @@
-﻿using Microsoft.Owin.Security.OAuth;
+﻿using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +11,22 @@ namespace WebApi
         public static void Register(HttpConfiguration config)
         {
             // Configuración y servicios de API web
-            config.SuppressDefaultHostAuthentication();
-            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
             // Rutas de API web
+
+            config.EnableCors();
+            var json = config.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+
             config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+
+            //config.Routes.MapHttpRoute(
+              //  name: "DefaultApi",
+               // routeTemplate: "api/{controller}/{id}",
+               // defaults: new { id = RouteParameter.Optional }
+            //);
         }
     }
 }
