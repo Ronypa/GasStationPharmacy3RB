@@ -19,7 +19,6 @@ namespace WebApi.Models
         {
             this.PADECIMIENTOes = new HashSet<PADECIMIENTO>();
             this.PEDIDOes = new HashSet<PEDIDO>();
-            this.ROLXDEPENDIENTEs = new HashSet<ROLXDEPENDIENTE>();
             this.TELEFONOXCLIENTEs = new HashSet<TELEFONOXCLIENTE>();
         }
     
@@ -40,8 +39,6 @@ namespace WebApi.Models
         public virtual ICollection<PADECIMIENTO> PADECIMIENTOes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEDIDO> PEDIDOes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ROLXDEPENDIENTE> ROLXDEPENDIENTEs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TELEFONOXCLIENTE> TELEFONOXCLIENTEs { get; set; }
     }

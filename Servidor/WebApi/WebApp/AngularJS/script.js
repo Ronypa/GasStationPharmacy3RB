@@ -54,8 +54,8 @@ app.service('ServicioHTTP', function ($http) {
         return $http.get(urlGet);
     };
 
-    this.getbyID = function (apiRoute, studentID,pass) {
-        urlGet = apiRoute + '/' + studentID + '/' + pass;
+    this.getLogin = function (apiRoute, cedula, contrasena) {
+        urlGet = apiRoute + '/' + cedula + '/' + contrasena;
         return $http.get(urlGet);
     };
 });
@@ -66,7 +66,7 @@ app.controller('logincontroller', function ($scope, ServicioHTTP, $location) {
 
     $scope.loginAdministrador = function () {
         var apiRoute = '/WebApi/api/EMPLEADO';
-        var student = ServicioHTTP.getbyID(apiRoute, $scope.loginCedula, $scope.loginPassword);
+        var student = ServicioHTTP.getLogin(apiRoute, $scope.loginCedula, $scope.loginPassword);
         student.then(function (response) {
             $location.path("/entro");
         },
@@ -74,6 +74,18 @@ app.controller('logincontroller', function ($scope, ServicioHTTP, $location) {
                 alert("Usuario y/o contraseña incorrecto");
             });
     };
+
+    $scope.loginCliente = function () {
+        var apiRoute = '/WebApi/api/Cliente';
+        var student = ServicioHTTP.getLogin(apiRoute, $scope.loginCedula, $scope.loginPassword);
+        student.then(function (response) {
+            $location.path("/entro");
+        },
+            function (error) {
+                alert("Usuario y/o contraseña incorrecto");
+            });
+    };
+
     //funciones para redireccionar a las vistas de log in
     $scope.loginadministrador = function () {
         $location.path("/loginadministrador");

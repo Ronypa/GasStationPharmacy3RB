@@ -14,22 +14,21 @@ using WebApi.Models;
 namespace WebApi.Controllers
 {
     
-    public class EMPLEADOController : ApiController
+    public class EmpleadoController : ApiController
     {
         private GasStationPharmacyEntities db = new GasStationPharmacyEntities();
         
-        // GET api/ptemployees/5
-        [Route("api/Empleado/{id}/{pass}")]
-        public HttpResponseMessage Get(int id, string pass)
+        [Route("api/Empleado/{cedula}/{contrasena}")]
+        public HttpResponseMessage Get(int cedula, string contrasena)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            var employees = RepositorioEmpleado.GetEmpleado(id,pass);
-            HttpResponseMessage responseError = Request.CreateResponse(HttpStatusCode.NotFound, employees);
-            if (employees == null)
+            var empleado = RepositorioEmpleado.GetEmpleado(cedula,contrasena);
+            HttpResponseMessage responseError = Request.CreateResponse(HttpStatusCode.NotFound, empleado);
+            if (empleado == null)
             {
                 return responseError;
             }
-            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, employees);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, empleado);
             return response;
         }
 

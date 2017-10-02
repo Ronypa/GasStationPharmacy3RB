@@ -18,6 +18,7 @@ namespace WebApi.Models
         public EMPLEADO()
         {
             this.ADMINISTRADORXSUCURSALs = new HashSet<ADMINISTRADORXSUCURSAL>();
+            this.ROLXDEPENDIENTEs = new HashSet<ROLXDEPENDIENTE>();
         }
     
         public int Cedula { get; set; }
@@ -36,5 +37,7 @@ namespace WebApi.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ADMINISTRADORXSUCURSAL> ADMINISTRADORXSUCURSALs { get; set; }
         public virtual SUCURSAL SUCURSAL1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ROLXDEPENDIENTE> ROLXDEPENDIENTEs { get; set; }
     }
 }

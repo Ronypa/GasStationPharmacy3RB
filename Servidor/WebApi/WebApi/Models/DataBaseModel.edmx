@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GasStationPharmacyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GasStationPharmacyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ADMINISTRADORXSUCURSAL">
           <Key>
             <PropertyRef Name="Administrador" />
@@ -293,11 +293,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ROLXDEPEN__Depen__44FF419A">
-          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+        <Association Name="FK__ROLXDEPEN__Depen__5AEE82B9">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
           <End Role="ROLXDEPENDIENTE" Type="Self.ROLXDEPENDIENTE" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="CLIENTE">
+            <Principal Role="EMPLEADO">
               <PropertyRef Name="Cedula" />
             </Principal>
             <Dependent Role="ROLXDEPENDIENTE">
@@ -401,8 +401,8 @@
             <End Role="SUCURSAL" EntitySet="SUCURSAL" />
             <End Role="PEDIDO" EntitySet="PEDIDO" />
           </AssociationSet>
-          <AssociationSet Name="FK__ROLXDEPEN__Depen__44FF419A" Association="Self.FK__ROLXDEPEN__Depen__44FF419A">
-            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          <AssociationSet Name="FK__ROLXDEPEN__Depen__5AEE82B9" Association="Self.FK__ROLXDEPEN__Depen__5AEE82B9">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
             <End Role="ROLXDEPENDIENTE" EntitySet="ROLXDEPENDIENTE" />
           </AssociationSet>
           <AssociationSet Name="FK__ROLXDEPENDI__Rol__440B1D61" Association="Self.FK__ROLXDEPENDI__Rol__440B1D61">
@@ -418,8 +418,7 @@
             <End Role="TELEFONOXCLIENTE" EntitySet="TELEFONOXCLIENTE" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GasStationPharmacyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -461,7 +460,6 @@
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="PADECIMIENTOes" Relationship="Self.FK__PADECIMIE__Clien__4316F928" FromRole="CLIENTE" ToRole="PADECIMIENTO" />
           <NavigationProperty Name="PEDIDOes" Relationship="Self.FK__PEDIDO__Cliente__403A8C7D" FromRole="CLIENTE" ToRole="PEDIDO" />
-          <NavigationProperty Name="ROLXDEPENDIENTEs" Relationship="Self.FK__ROLXDEPEN__Depen__44FF419A" FromRole="CLIENTE" ToRole="ROLXDEPENDIENTE" />
           <NavigationProperty Name="TELEFONOXCLIENTEs" Relationship="Self.FK__TELEFONOX__Clien__49C3F6B7" FromRole="CLIENTE" ToRole="TELEFONOXCLIENTE" />
         </EntityType>
         <EntityType Name="COMPAÑIA">
@@ -491,6 +489,7 @@
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ADMINISTRADORXSUCURSALs" Relationship="Self.FK__ADMINISTR__Admin__412EB0B6" FromRole="EMPLEADO" ToRole="ADMINISTRADORXSUCURSAL" />
           <NavigationProperty Name="SUCURSAL1" Relationship="Self.FK__EMPLEADO__Sucurs__4AB81AF0" FromRole="EMPLEADO" ToRole="SUCURSAL" />
+          <NavigationProperty Name="ROLXDEPENDIENTEs" Relationship="Self.FK__ROLXDEPEN__Depen__5AEE82B9" FromRole="EMPLEADO" ToRole="ROLXDEPENDIENTE" />
         </EntityType>
         <EntityType Name="MEDICAMENTO">
           <Key>
@@ -580,7 +579,7 @@
           <Property Name="Dependiente" Type="Int32" Nullable="false" />
           <Property Name="Rol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="CLIENTE" Relationship="Self.FK__ROLXDEPEN__Depen__44FF419A" FromRole="ROLXDEPENDIENTE" ToRole="CLIENTE" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__ROLXDEPEN__Depen__5AEE82B9" FromRole="ROLXDEPENDIENTE" ToRole="EMPLEADO" />
           <NavigationProperty Name="ROL1" Relationship="Self.FK__ROLXDEPENDI__Rol__440B1D61" FromRole="ROLXDEPENDIENTE" ToRole="ROL" />
         </EntityType>
         <EntityType Name="SUCURSAL">
@@ -669,18 +668,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ROLXDEPEN__Depen__44FF419A">
-          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
-          <End Role="ROLXDEPENDIENTE" Type="Self.ROLXDEPENDIENTE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CLIENTE">
-              <PropertyRef Name="Cedula" />
-            </Principal>
-            <Dependent Role="ROLXDEPENDIENTE">
-              <PropertyRef Name="Dependiente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__TELEFONOX__Clien__49C3F6B7">
           <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
           <End Role="TELEFONOXCLIENTE" Type="Self.TELEFONOXCLIENTE" Multiplicity="*" />
@@ -714,6 +701,18 @@
             </Principal>
             <Dependent Role="EMPLEADO">
               <PropertyRef Name="Sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ROLXDEPEN__Depen__5AEE82B9">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="ROLXDEPENDIENTE" Type="Self.ROLXDEPENDIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="ROLXDEPENDIENTE">
+              <PropertyRef Name="Dependiente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -825,10 +824,6 @@
             <End Role="CLIENTE" EntitySet="CLIENTEs" />
             <End Role="PEDIDO" EntitySet="PEDIDOes" />
           </AssociationSet>
-          <AssociationSet Name="FK__ROLXDEPEN__Depen__44FF419A" Association="Self.FK__ROLXDEPEN__Depen__44FF419A">
-            <End Role="CLIENTE" EntitySet="CLIENTEs" />
-            <End Role="ROLXDEPENDIENTE" EntitySet="ROLXDEPENDIENTEs" />
-          </AssociationSet>
           <AssociationSet Name="FK__TELEFONOX__Clien__49C3F6B7" Association="Self.FK__TELEFONOX__Clien__49C3F6B7">
             <End Role="CLIENTE" EntitySet="CLIENTEs" />
             <End Role="TELEFONOXCLIENTE" EntitySet="TELEFONOXCLIENTEs" />
@@ -840,6 +835,10 @@
           <AssociationSet Name="FK__EMPLEADO__Sucurs__4AB81AF0" Association="Self.FK__EMPLEADO__Sucurs__4AB81AF0">
             <End Role="SUCURSAL" EntitySet="SUCURSALs" />
             <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ROLXDEPEN__Depen__5AEE82B9" Association="Self.FK__ROLXDEPEN__Depen__5AEE82B9">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="ROLXDEPENDIENTE" EntitySet="ROLXDEPENDIENTEs" />
           </AssociationSet>
           <AssociationSet Name="FK__MEDICAMEN__Medic__46E78A0C" Association="Self.FK__MEDICAMEN__Medic__46E78A0C">
             <End Role="MEDICAMENTO" EntitySet="MEDICAMENTOes" />

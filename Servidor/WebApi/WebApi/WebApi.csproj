@@ -199,72 +199,74 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\EMPLEADOController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ADMINISTRADORXSUCURSAL.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CASAFARMACEUTICA.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CLIENTE.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\COMPAÑIA.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataBaseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBaseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataBaseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataBaseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBaseModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\EMPLEADO.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MEDICAMENTO.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MEDICAMENTOXPEDIDO.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MEDICAMENTOXRECETA.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModelDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModelDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModelDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PADECIMIENTO.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PEDIDO.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RECETA.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RepositorioCliente.cs" />
     <Compile Include="Models\RepositorioEmpleado.cs" />
     <Compile Include="Models\ROL.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ROLXDEPENDIENTE.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SUCURSAL.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TELEFONOXCLIENTE.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>DataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -275,15 +277,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\ModelDB.Context.tt">
+    <Content Include="Models\DataBaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelDB.Context.cs</LastGenOutput>
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <DependentUpon>DataBaseModel.edmx</DependentUpon>
+      <LastGenOutput>DataBaseModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ModelDB.tt">
+    <Content Include="Models\DataBaseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelDB.edmx</DependentUpon>
-      <LastGenOutput>ModelDB.cs</LastGenOutput>
+      <DependentUpon>DataBaseModel.edmx</DependentUpon>
+      <LastGenOutput>DataBaseModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -309,12 +311,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\ModelDB.edmx">
+    <EntityDeploy Include="Models\DataBaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataBaseModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ModelDB.edmx.diagram">
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+    <Content Include="Models\DataBaseModel.edmx.diagram">
+      <DependentUpon>DataBaseModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

@@ -18,7 +18,7 @@ namespace WebApi.Models
         public string Rol { get; set; }
         public bool Activo { get; set; }
     
-        public virtual CLIENTE CLIENTE { get; set; }
+        public virtual EMPLEADO EMPLEADO { get; set; }
         public virtual ROL ROL1 { get; set; }
     }
 }
