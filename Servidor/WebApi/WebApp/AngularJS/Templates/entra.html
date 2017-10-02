@@ -1,1 +1,113 @@
-﻿<h1>HIIIIIIIIIIII</h1>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="../../CSS/styles.css" rel="stylesheet" />
+    <script src="~/Scripts/angular.min.js"></script>
+    
+</head>
+<body>
+
+    <p>Click on the buttons inside the tabbed menu:</p>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Clientes')" id="defaultOpen">Clientes</button>
+        <button class="tablinks" onclick="openCity(event, 'Doctores')">Doctores</button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    </div>
+
+    <div id="Clientes" class="tabcontent">
+        <h3>Clientes</h3>
+        <table class="table table-bordered table-striped table-condensed">
+            <tr>
+                <td>Numero de Cédula</td>
+                <td><input type="number" class="form-control" ng-model="cedula" /></td>
+            </tr>
+            <tr>
+                <td>Primer Nombre</td>
+                <td><input type="text" class="form-control" ng-model="nombre1" /></td>
+            </tr>
+            <tr>
+                <td>Segundo Nombre</td>
+                <td><input type="text" class="form-control" ng-model="nombre2" /></td>
+            </tr>
+            <tr>
+                <td>Primer Apellido</td>
+                <td><input type="text" class="form-control" ng-model="apellido1" /></td>
+            </tr>
+            <tr>
+                <td>Segundo Apellido</td>
+                <td><input type="text" class="form-control" ng-model="apellido2" /></td>
+            </tr>
+            <tr>
+                <td>Provincia</td>
+                <td><input type="text" class="form-control" ng-model="provincia" /></td>
+            </tr>
+            <tr>
+                <td>Cuidad</td>
+                <td><input type="text" class="form-control" ng-model="cuidad" /></td>
+            </tr>
+            <tr>
+                <td>Señas</td>
+                <td><input type="text" class="form-control" ng-model="señas" /></td>
+            </tr>
+            <tr>
+                <td>Fecha de Nacimiento</td>
+                <td><input type="date" class="form-control" ng-model="fechaNacimiento" /></td>
+            </tr>
+            <tr>
+                <td>Contraseña</td>
+                <td><input type="password" class="form-control" ng-model="contraseña" /></td>
+            </tr>
+            <tr>
+                <td>Sucursal</td>
+                <td><input type="text" class="form-control" ng-model="sucursal" /></td>
+            </tr>
+            <tr>
+                <td>Activo</td>
+                <td><input type="number" class="form-control" ng-model="activo" /></td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td></td>
+                <td><input type="button" value="Crear" class="form-control btn btn-success" ng-click="Crear()" /></td>
+            </tr>
+        </table>
+        <
+        
+    </div>
+
+    <div id="Doctores" class="tabcontent">
+        <h3>Doctores</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+</html> 
