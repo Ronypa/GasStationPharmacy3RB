@@ -15,7 +15,7 @@
     <RootNamespace>WebApp</RootNamespace>
     <AssemblyName>WebApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -66,7 +66,49 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regulard41d.eot" />
     <None Include="packages.config" />
+    <Content Include="AngularJS\Templates\Clientes.html" />
+    <Content Include="AngularJS\Templates\Doctores.html" />
+    <Content Include="AngularJS\Templates\Estadisticas.html" />
+    <Content Include="AngularJS\Templates\Medicamentos.html" />
+    <Content Include="AngularJS\Templates\Roles.html" />
+    <Content Include="AngularJS\Templates\Sucursales.html" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\custom.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\1.png" />
+    <Content Include="assets\img\2.png" />
+    <Content Include="assets\img\3.png" />
+    <Content Include="assets\img\4.png" />
+    <Content Include="assets\img\find_user.png" />
+    <Content Include="assets\img\find_user1.png" />
+    <Content Include="assets\img\icono_clientes.png" />
+    <Content Include="assets\img\icono_doctores.png" />
+    <Content Include="assets\img\icono_estadisticas.png" />
+    <Content Include="assets\img\icono_medicamentos.png" />
+    <Content Include="assets\img\icono_roles.png" />
+    <Content Include="assets\img\icono_sucursales.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="assets\js\jquery-1.10.2.js" />
+    <Content Include="assets\js\jquery.metisMenu.js" />
+    <Content Include="assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="assets\js\morris\morris.js" />
+    <Content Include="assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="CSS\tabla.css" />
     <Content Include="Scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -109,7 +151,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50121</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/WebApp</IISUrl>
+          <IISUrl>http://localhost:59538/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
