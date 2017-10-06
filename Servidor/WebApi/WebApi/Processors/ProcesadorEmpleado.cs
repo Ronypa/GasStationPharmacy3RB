@@ -23,7 +23,7 @@ namespace GasStationPharmacy.Processors
         /// <param name="contrasena">contrasena del empleado ingresada</param>
         /// <returns>true si el empleado existe 
         /// , false si no existe</returns>
-        public static bool ProcesoLogearEmpleado(int cedula, string contrasena)
+        public static List<string> ProcesoLogearEmpleado(int cedula, string contrasena)
         { return RepositorioEmpleado.LogearEmpleado(cedula, contrasena); }
     }
 }

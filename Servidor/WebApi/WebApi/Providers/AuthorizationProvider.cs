@@ -1,6 +1,7 @@
 ﻿using GasStationPharmacy.Processors;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -55,7 +56,8 @@ namespace WebApi.Providers
 
             //Cuando se esta intentando logear un empleado
             else if (context.ClientId == "empleado") {
-                if (!ProcesadorEmpleado.ProcesoLogearEmpleado(int.Parse(context.UserName), context.Password))
+                List<string> roles = ProcesadorEmpleado.ProcesoLogearEmpleado(int.Parse(context.UserName), context.Password);
+                if (roles==null)
                 {
                     context.SetError("Login incorrecto", "Usuario y/o contraseña incorrecto");
                     return Task.FromResult<object>(null);
@@ -63,7 +65,10 @@ namespace WebApi.Providers
                 else
                 {
                     identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
-                    identity.AddClaim(new Claim(ClaimTypes.Role, "Empleado"));
+                    foreach (string rol in roles)
+                    {
+                        identity.AddClaim(new Claim(ClaimTypes.Role, rol));
+                    }
                 }
             }
 

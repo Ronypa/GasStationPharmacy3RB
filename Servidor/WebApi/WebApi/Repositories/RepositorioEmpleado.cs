@@ -21,7 +21,7 @@ namespace GasStationPharmacy.Repositories
         /// <param name="contrasena">contraseña del empleado ingresada</param>
         /// <returns>true si el empleado existe
         /// false en caso contrario</returns>
-        public static bool LogearEmpleado(int cedula, string contrasena)
+        public static List<string> LogearEmpleado(int cedula, string contrasena)
         {
             //query de la solicitud
             var query = "SELECT [Nombre1], [Apellido1] FROM[dbo].[EMPLEADO] " +
@@ -35,12 +35,35 @@ namespace GasStationPharmacy.Repositories
                 comando.Parameters.AddWithValue("@contrasena", contrasena);
                 var reader = comando.ExecuteReader();
                 //No se encuentra el empleado
-                if (!reader.HasRows) { conexion.Close(); return false; }
+                if (!reader.HasRows) { conexion.Close(); return null; }
                 //Si se encontro el empleado
                 conexion.Close();
-                return true;
+                return consultarRoles(cedula);
             }
-            catch (Exception) { return false; }
+            catch (Exception) { return null; }
+        }
+
+        public static List<string> consultarRoles(int cedula)
+        {
+            var lista = new List<string>();
+            //query de la solicitud
+            var query = "SELECT [Rol] FROM[dbo].[ROLXDEPENDIENTE] " +
+                "WHERE Dependiente= @cedula";
+            //ejecuta el query
+            try
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@cedula", cedula);
+                using (var reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())//Se agrega la informacion leida a la lista
+                        lista.Add(reader.GetString(0));
+                }
+                conexion.Close();
+                return lista;
+            }
+            catch (Exception) { return null; }
         }
 
 
