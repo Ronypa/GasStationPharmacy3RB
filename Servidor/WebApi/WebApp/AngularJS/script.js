@@ -1,5 +1,4 @@
-﻿var app = angular.module('app', ['ngRoute']);
-
+﻿var app = angular.module('app', ['ngRoute','ngCookies']);
 
 //Ruteador, (relaciona direccion con html y controlador)
 app.config(function ($routeProvider) {
@@ -7,58 +6,49 @@ app.config(function ($routeProvider) {
         templateUrl: 'AngularJS/Templates/principal.html',
         controller: 'logincontroller'
     })
-        .when("/logincliente", {
-            templateUrl: 'AngularJS/Templates/loginCliente.html',
-            controller: 'logincontroller'
-        })
-        .when("/loginadministrador", {
-            templateUrl: "AngularJS/Templates/loginAdministrador.html",
-            controller: "logincontroller"
-        })
-        .when("/entro", {
-            templateUrl: "AngularJS/Templates/entro.html",
-            controller: "logincontroller"
-        })
-        // route for the home page
-        .when('/admin', {
-            //This is to define the templates in our html file
-            templateUrl: 'AngularJS/Templates/Clientes.html',
-            controller: 'clientes'
-        })
-
-        // route for the about page
-        .when('/doctores', {
-            templateUrl: 'AngularJS/Templates/Doctores.html',
-            controller: 'doctores'
-        })
-
-        // route for the contact page
-        .when('/medicamentos', {
-            templateUrl: 'AngularJS/Templates/Medicamentos.html',
-            controller: 'medicamentos'
-        })
-        // route for the about page
-        .when('/roles', {
-            templateUrl: 'AngularJS/Templates/Roles.html',
-            controller: 'roles'
-        })
-
-        // route for the contact page
-        .when('/sucursales', {
-            templateUrl: 'AngularJS/Templates/sucursales.html',
-            controller: 'sucursales'
-        })
-
-        // route for the contact page
-        .when('/estadisticas', {
-            templateUrl: 'AngularJS/Templates/estadisticas.html',
-            controller: 'estadisticas'
-        })
-
-        .otherwise({
-            redirectTo: '/'
-        });
+    .when("/logincliente", {
+        templateUrl: 'AngularJS/Templates/loginCliente.html',
+        controller: 'logincontroller'
+    })
+    .when("/loginadministrador", {
+        templateUrl: "AngularJS/Templates/loginAdministrador.html",
+        controller: "logincontroller"
+    })
+    .when("/entro", {
+        templateUrl: "AngularJS/Templates/entro.html",
+        controller: "logincontroller",
+        authenticated: true
+    })
+    .otherwise({
+        redirectTo: '/'
+    });
 });
+
+app.run(["$rootScope", "$location", "authFact", function ($rootScope,
+    $location, authFact) {
+    $rootScope.$on('$routeChangeStart', function (event, next, current) {
+        if (next.$$route.authenticated) {
+            var userAuth = authFact.getAccessToken();
+            if (!userAuth) {
+                $location.path('/');
+            }
+        }
+    });
+}]);
+
+app.factory('authFact', ["$cookieStore",function ($cookieStore) {
+    var authFact = {};
+    authFact.setAccessToken = function (accessToken) {
+        $cookieStore.put('accessToken', accessToken);
+    };
+
+    authFact.getAccessToken = function () {
+        authFact.authToken = $cookieStore.get('accessToken');
+        return authFact.authToken;
+    };
+
+    return authFact;
+}]);
 
 //Servicio para realizar peticiones http 
 app.service('ServicioHTTP', function ($http) {
@@ -71,6 +61,7 @@ app.service('ServicioHTTP', function ($http) {
         });
         return request;
     };
+
     this.put = function (apiRoute, Model) {
         var request = $http({
             method: "put",
@@ -97,30 +88,53 @@ app.service('ServicioHTTP', function ($http) {
     };
 });
 
-
 //Controlador para el login tiene la funcion que se llama desde el html (hace uso del servicio "loginService")
-app.controller('logincontroller', function ($scope, $rootScope, ServicioHTTP, $location) {
-    $rootScope.hideit = true;
+app.controller('logincontroller', function ($scope, $cookieStore,ServicioHTTP, $location,authFact) {
+
     $scope.loginAdministrador = function () {
-        var apiRoute = '/WebApi/api/EMPLEADO';
-        var student = ServicioHTTP.getLogin(apiRoute, $scope.loginCedula, $scope.loginPassword);
-        student.then(function (response) {
+        var empleado =
+            "userName=" + encodeURIComponent($scope.loginCedula) +
+            "&password=" + encodeURIComponent($scope.loginPassword) +
+            "&grant_type=password" +
+            "&client_id=empleado"
+            ;
+
+        var apiRoute = '/WebApi/token';
+        var respuesta = ServicioHTTP.post(apiRoute, empleado);
+        respuesta.then(function (response) {
+
+            var accessToken = response.data.access_token;
+            authFact.setAccessToken(accessToken);
             $location.path("/entro");
         },
             function (error) {
+                authFact.setAccessToken("");
                 alert("Usuario y/o contraseña incorrecto");
-            });
+            }
+        );
     };
 
     $scope.loginCliente = function () {
-        var apiRoute = '/WebApi/api/Cliente';
-        var student = ServicioHTTP.getLogin(apiRoute, $scope.loginCedula, $scope.loginPassword);
-        student.then(function (response) {
+        var cliente = 
+            "userName=" + encodeURIComponent($scope.loginCedula) +
+            "&password=" + encodeURIComponent($scope.loginPassword) +
+            "&grant_type=password"+
+            "&client_id=cliente"
+        ;
+
+        var apiRoute = '/WebApi/token';
+        var respuesta = ServicioHTTP.post(apiRoute, cliente);
+        respuesta.then(function (response) {
+
+            var accessToken = response.data.access_token;
+            authFact.setAccessToken(accessToken);
             $location.path("/entro");
         },
             function (error) {
+                authFact.setAccessToken("");
                 alert("Usuario y/o contraseña incorrecto");
-            });
+            }
+        );
     };
 
     //funciones para redireccionar a las vistas de log in
@@ -131,38 +145,4 @@ app.controller('logincontroller', function ($scope, $rootScope, ServicioHTTP, $l
         $location.path("/logincliente");
     };
 
-});
-
-// creating the controller and also injecting Angular's $scope
-app.controller('clientes', function ($scope, $rootScope) {
-    // create a message to display in our view
-    $rootScope.hideit = false;
-    $scope.message = 'What appears in the Home Page';
-});
-
-app.controller('doctores', function ($scope, $rootScope) {
-    $rootScope.hideit = false;
-    $scope.message = 'The contenet in the About page.';
-});
-
-app.controller('medicamentos', function ($scope, $rootScope) {
-    $rootScope.hideit = false;
-    $scope.message = 'This is our News Feed.';
-});
-
-// creating the controller and also injecting Angular's $scope
-app.controller('roles', function ($scope, $rootScope) {
-    $rootScope.hideit = false;
-    // create a message to display in our view
-    $scope.message = 'What appears in the Home Page';
-});
-
-app.controller('sucursales', function ($scope, $rootScope) {
-    $rootScope.hideit = false;
-    $scope.message = 'The contenet in the About page.';
-});
-
-app.controller('estadisticas', function ($scope, $rootScope) {
-    $rootScope.hideit = false;
-    $scope.message = 'This is our News Feed.';
 });

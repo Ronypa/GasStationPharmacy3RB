@@ -1,10 +1,19 @@
-﻿body {
-    padding-top: 80px;
-    padding-bottom: 40px;
-    background: url('./Imagenes/farma.jpg');
-    background-size: cover;
+﻿@media{
+    body {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        background-image: url(./Imagenes/farmapc.png);
+        background-size: auto;
+    }
 }
-
+@media only screen and (max-device-width: 1081px) {
+    body {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        background-image: url(./Imagenes/farmacel.jpg);
+        background-size: cover;
+    }
+}
 .profile-img-card {
     width: 96px;
     height: 96px;
@@ -15,13 +24,8 @@
     border-radius: 50%;
 }
 
-.formulario {
-    max-width: 330px;
-    padding: 15px;
-    margin: 0px auto;
-    background-color: #f3f3f3;
-}
-.formulario .form-control {
+
+.form-control {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -29,69 +33,98 @@
     user-select: none;
     position: relative;
     font: 15px 'Segoe UI',Arial,sans-serif;
-    background-color: #EAEBE5;
+    background-color: white;
     height: auto;
     padding: 10px;
-    color: #7e8c8d;
     outline: none;
-
 }
 .formulario input[type="number"], input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance:none;
+    -webkit-appearance: none;
     margin-bottom: 1px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-
+    color: black;
+    -moz-appearance: textfield;
 }
 .formulario input[type="password"] {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-
+    color: black;
 }
 
 
-.container {
-    width: 500px;
-    height: 450px;
+.bloque2 {
+    width: 315px;
+    height: 430px;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
 }
 
-.container form {
+.formulario {
+    padding: 15px;
+    margin: 0px auto;
     border-top: 2px solid #aaa;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.8);
     width: 100%;
     height: 100%;
-    position: absolute;
     top: 0px;
     left: 0;
-
+    background-color: azure;
 }
 
 .botoningresar {
-    -moz-box-shadow: 0px 10px 14px -7px #276873;
-    -webkit-box-shadow: 0px 10px 14px -7px #276873;
-    box-shadow: 0px 10px 14px -7px #276873;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
-    background: -moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
-    background: -webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
-    background: -o-linear-gradient(top, #599bb3 5%, #408c99 100%);
-    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
-    background-color: #599bb3;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
+    -moz-box-shadow: inset 5px 9px 14px -7px #276873;
+    -webkit-box-shadow: inset 5px 9px 14px -7px #276873;
+    box-shadow: inset 5px 9px 14px -7px #276873;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #78dbff), color-stop(1, #35646b));
+    background: -moz-linear-gradient(top, #78dbff 5%, #35646b 100%);
+    background: -webkit-linear-gradient(top, #78dbff 5%, #35646b 100%);
+    background: -o-linear-gradient(top, #78dbff 5%, #35646b 100%);
+    background: linear-gradient(to bottom, #78dbff 5%, #35646b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#78dbff', endColorstr='#35646b',GradientType=0);
+    background-color: #78dbff;
+    -moz-border-radius: 14px;
+    -webkit-border-radius: 14px;
+    border-radius: 6px;
+    border: 1px solid #29668f;
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
     font-family: Arial;
     font-size: 20px;
     font-weight: bold;
-    padding: 13px 32px;
+    padding: 8px 32px;
     text-decoration: none;
-    text-shadow: 1px 1px 1px #000000;
+    text-shadow: 3px 2px 0px #123642;
+    margin-bottom: 5px;
 }
 
+
+.botonregistrar {
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #949494));
+    background: -moz-linear-gradient(top, #ffffff 5%, #949494 100%);
+    background: -webkit-linear-gradient(top, #ffffff 5%, #949494 100%);
+    background: -o-linear-gradient(top, #ffffff 5%, #949494 100%);
+    background: linear-gradient(to bottom, #ffffff 5%, #949494 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#949494',GradientType=0);
+    background-color: #ffffff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #5e5e5e;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    position: relative;
+    /*left:80px;*/
+}

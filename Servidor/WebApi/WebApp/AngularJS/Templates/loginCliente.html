@@ -1,14 +1,14 @@
 ﻿<link href="CSS/logins.css" rel="stylesheet" />
-
-<div class="container">
+<div class="container-fluid bloque1">
     <div class="row">
-        <div class="container">
+        <div class="container-fluid bloque2">
             <form class="formulario">
                 <h3 class="form-encabezado" align="center">Ingreso de cliente</h3>
                 <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-                <input type="number" class="form-control" placeholder="Cédula" ng-model="loginCedula" required autofocus>
-                <input type="password" class="form-control" placeholder="Contraseña" ng-model="loginPassword" required>
+                <input type="number" class="form-control" placeholder="Cédula" ng-model="loginCedula" >
+                <input type="password" class="form-control" placeholder="Contraseña" ng-model="loginPassword">
                 <button class="botoningresar btn-block" type="button" ng-click="loginCliente()">Ingresar</button>
+                <button class="botonregistrar btn-block" type="button" ng-click="">Registrarse</button>
             </form>
         </div>
     </div>

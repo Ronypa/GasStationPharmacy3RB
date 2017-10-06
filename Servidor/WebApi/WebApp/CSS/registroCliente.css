@@ -1,0 +1,87 @@
+﻿    body {
+        padding-top:30px;
+        background-color: gray;
+    }
+
+
+.form-control {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    font: 15px 'Segoe UI',Arial,sans-serif;
+    background-color: whitesmoke;
+    height: auto;
+    padding: 10px;
+    outline: none;
+    color: black;
+    margin-bottom: 1px;
+}
+
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+
+.botonregistrar {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #44c767), color-stop(1, #3d4a35));
+    background: -moz-linear-gradient(top, #44c767 5%, #3d4a35 100%);
+    background: -webkit-linear-gradient(top, #44c767 5%, #3d4a35 100%);
+    background: -o-linear-gradient(top, #44c767 5%, #3d4a35 100%);
+    background: linear-gradient(to bottom, #44c767 5%, #3d4a35 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44c767', endColorstr='#3d4a35',GradientType=0);
+    background-color: #44c767;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+    border: 1px solid #4d4d4d;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 7px 25px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #307526;
+}
+    .botonregistrar:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3d4a35), color-stop(1, #44c767));
+        background: -moz-linear-gradient(top, #3d4a35 5%, #44c767 100%);
+        background: -webkit-linear-gradient(top, #3d4a35 5%, #44c767 100%);
+        background: -o-linear-gradient(top, #3d4a35 5%, #44c767 100%);
+        background: linear-gradient(to bottom, #3d4a35 5%, #44c767 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d4a35', endColorstr='#44c767',GradientType=0);
+        background-color: #3d4a35;
+    }
+
+.form-control1, .coloroption {
+    color: black;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    font: 15px 'Segoe UI',Arial,sans-serif;
+    background-color: white;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-bottom: 1px;
+    background-color: whitesmoke;
+}
+
+.form-control1 {
+    color: #8e8e8e;
+    background-color: whitesmoke;
+}
+
