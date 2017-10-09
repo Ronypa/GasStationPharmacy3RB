@@ -19,9 +19,8 @@ namespace GasStationPharmacy.Controllers
         /// <returns>Una lista con todos los empleados y un http status de de ok si se 
         /// proceso la solicitud o unauthorized en caso contrario
         /// </returns>
-        [Authorize(Roles = "Admin")]
         [HttpGet]
-        [Route("consultarEmpleado")]
+        [Route("consultarEmpleados")]
         public HttpResponseMessage ConsultarEmpleado()
         {
             List<Empleado> empleados = ProcesadorEmpleado.ProcesoConsultarEmpleados();
@@ -32,6 +31,21 @@ namespace GasStationPharmacy.Controllers
             }
             //Encontro la lista de empleados 
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, empleados);
+            return response;
+        }
+
+
+        [HttpPost]
+        [Route("borrarEmpleados")]
+        public HttpResponseMessage BorrarEmpleado([FromBody]string cedula)
+        {
+            if (!ProcesadorEmpleado.ProcesoBorrarEmpleado(int.Parse(cedula)))
+            {//No se proceso bien la solicitud
+                HttpResponseMessage responseError = Request.CreateResponse(HttpStatusCode.NotFound);
+                return responseError;
+            }
+            //Encontro la lista de clientes 
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
         }
     }

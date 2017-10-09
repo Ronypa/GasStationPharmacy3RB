@@ -1,0 +1,30 @@
+﻿<link href="CSS/tabla.css" rel="stylesheet" />
+<ng-include src="urlAdmin"></ng-include>
+<div class="page-wrapper">
+    <div class="side-body">
+        <h1> Administración de empleados </h1>
+        <table>
+            <thead>
+                <tr><th colspan="5">Lista de Empleados</th></tr>
+                <tr>
+                    <th>Numero de Cédula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th colspan="2">Sucursal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="empleado in empleados">
+                    <td>{{empleado.cedula}}</td>
+                    <td>{{empleado.nombre1}}</td>
+                    <td>{{empleado.apellido1}}</td>
+                    <td>{{empleado.sucursal}}</td>
+                    <td>
+                        <i class="material-icons button edit">Editar</i>
+                        <i class="material-icons button delete" ng-click="BorrarCliente(empleado.cedula)">Eliminar</i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

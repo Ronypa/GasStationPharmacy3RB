@@ -25,10 +25,11 @@ namespace GasStationPharmacy.Repositories
         {
             //query de la solicitud
             var query = "SELECT [Nombre1], [Apellido1] FROM[dbo].[CLIENTE] " +
-                "WHERE Cedula= @cedula AND Contraseña= @contrasena";
+                "WHERE Activo=1 AND Cedula= @cedula AND Contrasena= @contrasena";
             //ejecuta el query
             try
             {
+                conexion.Close();
                 conexion.Open();
                 SqlCommand comando = new SqlCommand(query, conexion);
                 comando.Parameters.AddWithValue("@cedula", cedula);
@@ -51,7 +52,7 @@ namespace GasStationPharmacy.Repositories
             var lista = new List<Cliente>();
             //Query que consulta la base de datos
             var query = "SELECT [Cedula], [Nombre1], [Nombre2], [Apellido1], [Apellido2], [Provincia]," +
-                "[Cuidad], [Señas], [FechaNacimiento], [Prioridad] FROM[dbo].[CLIENTE] WHERE Activo=1";
+                "[Cuidad], [Senas], [FechaNacimiento], [Prioridad] FROM[dbo].[CLIENTE] WHERE Activo=1";
 
             //Se ejecuta el query
             try
@@ -68,7 +69,7 @@ namespace GasStationPharmacy.Repositories
                             apellido2 = reader.GetString(4),
                             provincia = reader.GetString(5),
                             ciudad = reader.GetString(6),
-                            señas = reader.GetString(7),
+                            senas = reader.GetString(7),
                             fechaNacimiento = reader.GetDateTime(8).ToString(),
                             contrasena = "",
                             activo = true
@@ -87,16 +88,19 @@ namespace GasStationPharmacy.Repositories
         /// <returns></returns>
         public static string AgregarCliente(Cliente cliente)
         {
+
             //Query que consulta la base de datos
             var query = "INSERT INTO [dbo].[CLIENTE] ([Cedula] ,[Nombre1], [Nombre2] ,[Apellido1], " +
-                "[Apellido2] ,[Provincia] ,[Cuidad] ,[Señas] ,[FechaNacimiento] ,[Prioridad] , " +
-                "[Contraseña] ,[Activo]) VALUES(@Cedula, @Nombre1, @Nombre2, @Apellido1," +
-                "@Apellido2, @Provincia, @Cuidad, @Señas, @FechaNacimiento, @Prioridad," +
+                "[Apellido2] ,[Provincia] ,[Cuidad] ,[Senas] ,[FechaNacimiento] ,[Prioridad] , " +
+                "[Contrasena] ,[Activo]) VALUES(@Cedula, @Nombre1, @Nombre2, @Apellido1," +
+                "@Apellido2, @Provincia, @Cuidad, @Senas, @FechaNacimiento, @Prioridad," +
                 "@Contraseña, @Activo)";
 
             //Se ejecuta el query
             try
             {
+
+                conexion.Close();
                 conexion.Open();
                 SqlCommand comando = new SqlCommand(query, conexion);
                 comando.Parameters.AddWithValue("@Cedula", cliente.cedula);
@@ -107,7 +111,7 @@ namespace GasStationPharmacy.Repositories
                 comando.Parameters.AddWithValue("@Apellido2", cliente.apellido2);
                 comando.Parameters.AddWithValue("@Provincia", cliente.provincia);
                 comando.Parameters.AddWithValue("@Cuidad", cliente.ciudad);
-                comando.Parameters.AddWithValue("@Señas", cliente.señas);
+                comando.Parameters.AddWithValue("@Señas", cliente.senas);
                 comando.Parameters.AddWithValue("@FechaNacimiento", cliente.fechaNacimiento);
                 comando.Parameters.AddWithValue("@Prioridad", 1);
                 comando.Parameters.AddWithValue("@Activo", 1);
@@ -118,5 +122,50 @@ namespace GasStationPharmacy.Repositories
             }
             catch (Exception e) { return e.ToString(); }
         }
+
+        public static bool BorrarCliente(int cedula)
+        {
+            //query de la solicitud
+            var query = "UPDATE [dbo].[CLIENTE] SET [ACTIVO]=0" +
+                "WHERE Cedula= @cedula";
+            //ejecuta el query
+            try
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@cedula", cedula);
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+                conexion.Close();
+                return true;
+            }
+            catch (Exception) { return false; }
+        }
+
+        public static bool ActualizarContraseña(int cedula, string contrasenaActual, string contrasenaNueva)
+        {
+            //query de la solicitud
+            var query = "UPDATE [dbo].[CLIENTE] SET [Contrasena]=@nueva " +
+                "WHERE Cedula= @cedula AND Contrasena = @vieja";
+            //ejecuta el query
+            try
+            {
+                conexion.Close();
+                conexion.Open();
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@cedula", cedula);
+                comando.Parameters.AddWithValue("@nueva", contrasenaNueva);
+                comando.Parameters.AddWithValue("@vieja", contrasenaActual);
+                var reader = comando.ExecuteReader();
+                //No se encuentra el cliente
+                if (reader.RecordsAffected<1) { conexion.Close(); return false; }
+                //Si se encontro el cliente
+                conexion.Close();
+                return true;
+            }
+            catch (Exception e) { conexion.Close(); return false; }
+        }
+
+
     }
 }

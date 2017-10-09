@@ -18,7 +18,7 @@ namespace GasStationPharmacy.Models
         public string apellido2 { get; set; }
         public string provincia { get; set; }
         public string ciudad { get; set; }
-        public string señas { get; set; }
+        public string senas { get; set; }
         public string fechaNacimiento { get; set; }
         public string contrasena { get; set; }
         public int prioridad { get; set; }

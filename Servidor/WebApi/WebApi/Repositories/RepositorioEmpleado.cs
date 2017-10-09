@@ -95,6 +95,7 @@ namespace GasStationPharmacy.Repositories
                             ciudad = reader.GetString(6),
                             señas = reader.GetString(7),
                             fechaNacimiento = reader.GetDateTime(8).ToString(),
+                            sucursal = reader.GetString(9).ToString(),
                             contrasena = "",
                             activo = true
                         });
@@ -104,5 +105,26 @@ namespace GasStationPharmacy.Repositories
             }
             catch (Exception) { return null; }
         }
+
+        public static bool BorrarEmpleado(int cedula)
+        {
+            //query de la solicitud
+            var query = "UPDATE [dbo].[EMPLEADO] SET [ACTIVO]=0" +
+                "WHERE Cedula= @cedula";
+            //ejecuta el query
+            try
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@cedula", cedula);
+                comando.ExecuteNonQuery();
+                comando.Dispose();
+                conexion.Close();
+                return true;
+            }
+            catch (Exception) { return false; }
+        }
+
+
     }
 }

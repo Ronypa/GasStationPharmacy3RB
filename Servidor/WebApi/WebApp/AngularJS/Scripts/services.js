@@ -25,9 +25,11 @@ app.service('ServicioHTTP', function ($http) {
         });
         return request;
     };
-    this.getAll = function (apiRoute) {
+    this.getAll = function (apiRoute,token) {
         urlGet = apiRoute;
-        return $http.get(urlGet);
+        return $http.get(urlGet, {
+            headers: { 'Authorization': 'Bearer '+token }
+        });
     };
 
     this.getLogin = function (apiRoute, cedula, contrasena) {

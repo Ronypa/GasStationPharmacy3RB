@@ -1,4 +1,4 @@
-﻿var app = angular.module('app', ['ngRoute','ngCookies']);
+﻿var app = angular.module('app', ['ui.bootstrap', 'ngRoute', 'ngCookies']);
 
 //Ruteador, (relaciona direccion con html y controlador)
 app.config(function ($routeProvider) {
@@ -6,22 +6,73 @@ app.config(function ($routeProvider) {
         templateUrl: 'AngularJS/Templates/principal.html',
         controller: 'logincontroller'
     })
-    .when("/logincliente", {
-        templateUrl: 'AngularJS/Templates/loginCliente.html',
-        controller: 'logincontroller'
-    })
-    .when("/loginadministrador", {
-        templateUrl: "AngularJS/Templates/loginAdministrador.html",
-        controller: "logincontroller"
-    })
-    .when("/entro", {
-        templateUrl: "AngularJS/Templates/entro.html",
-        controller: "logincontroller",
-        authenticated: true
-    })
-    .otherwise({
-        redirectTo: '/'
-    });
+        .when("/logincliente", {
+            templateUrl: 'AngularJS/Templates/sucursal.html',
+            ///controller: 'logincontroller'
+            controller: "sucursalController"
+        })
+        .when("/loginadministrador", {
+            templateUrl: "AngularJS/Templates/adminClientes.html",
+            //controller: "logincontroller"
+            controller: "adminCliController"
+        })
+        .when("/admin", {
+            templateUrl: "AngularJS/Templates/adminClientes.html",
+            controller: "adminCliController",
+            //authenticated: true
+        })
+        .when("/adminEmp", {
+            templateUrl: "AngularJS/Templates/adminEmpleados.html",
+            controller: "adminEmpController",
+            //authenticated: true
+        })
+        .when("/adminproductos", {
+            templateUrl: "AngularJS/Templates/adminProductos.html",
+            controller: "adminProduController",
+            //authenticated: true
+        })
+        .when("/adminroles", {
+            templateUrl: "AngularJS/Templates/adminRoles.html",
+            controller: "adminRolController",
+            //authenticated: true
+        })
+        .when("/adminsucursales", {
+            templateUrl: "AngularJS/Templates/adminSucursales.html",
+            controller: "adminSucuController",
+            //authenticated: true
+        })
+        .when("/adminestadisticas", {
+            templateUrl: "AngularJS/Templates/adminEstadisticas.html",
+            controller: "adminEstaController",
+            //authenticated: true
+        })
+        .when("/registrocliente", {
+            templateUrl: "AngularJS/Templates/registrarCliente.html",
+            controller: "registercontroller"
+        })
+        .when("/sucursal", {
+            templateUrl: "AngularJS/Templates/sucursal.html",
+            controller: "sucursalController",
+            //authenticated: true
+        })
+        .when("/pedidosPreparados", {
+            templateUrl: "AngularJS/Templates/pedidosPrepa.html",
+            controller: "pedidosPreparadosController",
+            //authenticated: true
+        })
+        .when("/pedidosFacturados", {
+            templateUrl: "AngularJS/Templates/pedidosFactu.html",
+            controller: "pedidosFacturadosController",
+            //authenticated: true
+        })
+        .when("/pedidosRetirados", {
+            templateUrl: "AngularJS/Templates/pedidosReti.html",
+            controller: "pedidosRetiradosController",
+            //authenticated: true
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 });
 
 app.run(["$rootScope", "$location", "authFact", function ($rootScope,

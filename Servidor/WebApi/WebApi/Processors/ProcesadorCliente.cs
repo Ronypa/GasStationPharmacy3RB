@@ -33,5 +33,12 @@ namespace GasStationPharmacy.Processors
         /// , false si no existe</returns>
         public static bool ProcesoLogearCliente(int cedula, string contrasena)
         {return RepositorioCliente.LogearCliente(cedula, contrasena);}
+
+
+        public static bool ProcesoBorrarCliente(int cedula)
+        { return RepositorioCliente.BorrarCliente(cedula); }
+
+        public static bool ProcesoCambiarContra(int cedula,string vieja, string nueva)
+        { return RepositorioCliente.ActualizarContraseña(cedula, vieja, nueva); }
     }
 }

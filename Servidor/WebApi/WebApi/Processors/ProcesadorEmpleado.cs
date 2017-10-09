@@ -25,5 +25,9 @@ namespace GasStationPharmacy.Processors
         /// , false si no existe</returns>
         public static List<string> ProcesoLogearEmpleado(int cedula, string contrasena)
         { return RepositorioEmpleado.LogearEmpleado(cedula, contrasena); }
+
+        public static bool ProcesoBorrarEmpleado(int cedula)
+        { return RepositorioEmpleado.BorrarEmpleado(cedula); }
+
     }
 }

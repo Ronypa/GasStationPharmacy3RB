@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,15 +71,58 @@
     <Content Include="AngularJS\Scripts\controllers.js" />
     <Content Include="AngularJS\Scripts\factories.js" />
     <Content Include="AngularJS\Scripts\services.js" />
+    <Content Include="AngularJS\Templates\adminEmpleados.html" />
+    <Content Include="AngularJS\Templates\adminEstadisticas.html" />
+    <Content Include="AngularJS\Templates\adminProductos.html" />
+    <Content Include="AngularJS\Templates\adminRoles.html" />
+    <Content Include="AngularJS\Templates\adminSucursales.html" />
+    <Content Include="AngularJS\Templates\menuLateral.html" />
+    <Content Include="AngularJS\Templates\pedidosFactu.html" />
+    <Content Include="AngularJS\Templates\pedidosPrepa.html" />
+    <Content Include="AngularJS\Templates\pedidosReti.html" />
     <Content Include="AngularJS\Templates\registrarCliente.html" />
+    <Content Include="AngularJS\Templates\menuSucursal.html" />
+    <Content Include="AngularJS\Templates\sucursal.html" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\custom.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\1.png" />
+    <Content Include="assets\img\2.png" />
+    <Content Include="assets\img\3.png" />
+    <Content Include="assets\img\4.png" />
+    <Content Include="assets\img\farmacia_icono.png" />
+    <Content Include="assets\img\find_user.png" />
+    <Content Include="assets\img\find_user1.png" />
+    <Content Include="assets\img\iconoSucu.png" />
+    <Content Include="assets\img\icono_clientes.png" />
+    <Content Include="assets\img\icono_doctores.png" />
+    <Content Include="assets\img\icono_estadisticas.png" />
+    <Content Include="assets\img\icono_medicamentos.png" />
+    <Content Include="assets\img\icono_roles.png" />
+    <Content Include="assets\img\icono_sucursales.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="assets\js\jquery-1.10.2.js" />
+    <Content Include="assets\js\jquery.metisMenu.js" />
+    <Content Include="assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="assets\js\morris\morris.js" />
+    <Content Include="assets\js\morris\raphael-2.1.0.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="CSS\Imagenes\farma2.jpg" />
+    <Content Include="CSS\admin.css" />
     <Content Include="CSS\Imagenes\farmacel.jpg" />
-    <Content Include="CSS\Imagenes\farmacel2.jpg" />
     <Content Include="CSS\Imagenes\farmapc.png" />
+    <Content Include="CSS\Imagenes\fondoReg.jpg" />
+    <Content Include="CSS\Imagenes\fondoRegcel.jpg" />
+    <Content Include="CSS\modal.css" />
+    <Content Include="CSS\tabla.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -89,6 +133,14 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="CSS\registroCliente.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regulard41d.eot" />
     <None Include="packages.config" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -884,16 +936,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularJS\Scripts\module.js" />
-    <Content Include="AngularJS\Templates\entro.html" />
+    <Content Include="AngularJS\Templates\adminClientes.html" />
     <Content Include="AngularJS\Templates\loginAdministrador.html" />
     <Content Include="AngularJS\Templates\loginCliente.html" />
     <Content Include="AngularJS\Templates\principal.html" />
-    <Content Include="CSS\Imagenes\farma.jpg" />
     <Content Include="CSS\logins.css" />
     <Content Include="CSS\principal.css" />
     <Content Include="CSS\styles.css" />
     <Content Include="index.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

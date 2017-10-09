@@ -1,0 +1,71 @@
+﻿<link href="CSS/tabla.css" rel="stylesheet" />
+<ng-include src="urlMenuSucursal"></ng-include>
+<div class="page-wrapper">
+    <div class="side-body">
+        <h1>Listado de pedidos nuevos</h1>
+        <table>
+            <thead>
+                <tr><th colspan="5">Lista de pedidos</th></tr>
+                <tr>
+                    <th>Fecha de retiro</th>
+                    <th>Número</th>
+                    <th>Cliente</th>
+                    <th colspan="2">Sucursal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="pedido in pedidosNuev">
+                    <td>{{pedido.fecha_recojo}}</td>
+                    <td>{{pedido.numero}}</td>
+                    <td>{{pedido.cliente}}</td>
+                    <td>{{pedido.sucursal}}</td>
+                    <td>
+                        <i class="material-icons button edit" ng-click="preparado(pedido.numero)">Preparado</i>
+                        <i class="material-icons button delete" ng-click="detalles(pedido)" data-toggle="modal" data-target="#modalDetalles">Detalles</i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalDetalles" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" align="center">Detalles del pedido</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label>Fecha de retiro:</label>
+                        <div class="container" style="width:100%">
+                            <p>{{pedido.fecha_recojo}}</p>
+                        </div>
+                        <label>Numero:</label>
+                        <div class="container">
+                            <p>{{pedido.numero}}</p>
+                        </div>
+                        <label>Cliente:</label>
+                        <div class="container">
+                            <p>{{pedido.cliente}}</p>
+                        </div>
+                        <label>Sucursal:</label>
+                        <div class="container">
+                            <p>{{pedido.sucursal}}</p>
+                        </div>
+                        <label>Productos:</label>
+                        <div class="container">
+                            <ul>
+                                <li ng-repeat="producto in pedido.productos">Producto: {{producto.medicamento}}. Cantidad: {{producto.cantidad}}. Precio: ¢{{producto.precio}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿<link href="CSS/tabla.css" rel="stylesheet" />
+<ng-include src="urlAdmin"></ng-include>
+<div class="page-wrapper">
+    <div class="side-body">
+        <h1> Administración de productos</h1>
+        <table>
+            <thead>
+                <tr><th colspan="5">Lista de productos</th></tr>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Prescripcion</th>
+                    <th colspan="2">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="producto in productos">
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.cantidad}}</td>
+                    <td>{{producto.prescripcion}}</td>
+                    <td>¢{{producto.precio}}</td>
+                    <td>
+                        <i class="material-icons button edit" ng-click="editar(producto)" data-toggle="modal" data-target="#miModal">Editar</i>
+                        <i class="material-icons button delete" ng-click="BorrarProducto(producto.nombre.ToString())">Eliminar</i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

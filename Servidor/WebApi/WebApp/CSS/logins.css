@@ -14,6 +14,15 @@
         background-size: cover;
     }
 }
+
+.hecho-true {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.login-button {
+    margin-top: 5px;
+}
 .profile-img-card {
     width: 96px;
     height: 96px;

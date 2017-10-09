@@ -1,0 +1,28 @@
+﻿<ng-include src="urlAdmin"></ng-include>
+<link href="CSS/tabla.css" rel="stylesheet" />
+<div class="page-wrapper">
+    <div class="side-body">
+        <h1> Administración de sucursales</h1>
+        <table>
+            <thead>
+                <tr><th colspan="4">Lista de sucursales</th></tr>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Provincia</th>
+                    <th colspan="2">Ciudad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sucursal in sucursales">
+                    <td>{{sucursal.nombre}}</td>
+                    <td>{{sucursal.provincia}}</td>
+                    <td>{{sucursal.ciudad}}</td>
+                    <td>
+                        <i class="material-icons button edit" ng-click="editar(sucursal)" data-toggle="modal" data-target="#miModal">Editar</i>
+                        <i class="material-icons button delete" ng-click="BorrarSucursal(sucursal.nombre)">Eliminar</i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
