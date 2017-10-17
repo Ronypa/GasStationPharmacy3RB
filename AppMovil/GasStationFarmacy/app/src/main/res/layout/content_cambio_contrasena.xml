@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".CambioDeContrasena"
+    tools:showIn="@layout/activity_cambio_contrasena">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/seguridad"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/imageContrasena" />
+
+    <TextView
+        android:id="@+id/txtContraseñaActual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Digite su contraseña actual"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        />
+
+    <EditText
+        android:id="@+id/contrasenaActual"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Contraseña actual"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+
+        android:layout_below="@id/txtContraseñaActual"
+        android:layout_marginTop="15dp"
+        />
+
+    <ImageButton
+        android:id="@+id/btnCA"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:background="#ffffff"
+        android:layout_toRightOf="@+id/contrasenaActual"
+
+        android:layout_below="@id/txtContraseñaActual"
+        android:layout_marginTop="23dp"
+        />
+
+    <TextView
+        android:id="@+id/txtContraseñaNueva1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Digite su nueva contraseña"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+
+        android:layout_below="@id/contrasenaActual"
+        android:layout_marginTop="35dp"
+        />
+
+    <EditText
+        android:id="@+id/contrasenaNueva1"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Contraseña nueva"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+
+        android:layout_below="@id/txtContraseñaNueva1"
+        android:layout_marginTop="15dp"
+        />
+
+    <ImageButton
+        android:id="@+id/btnCN1"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:background="#ffffff"
+
+        android:layout_toRightOf="@+id/contrasenaNueva1"
+
+        android:layout_below="@id/txtContraseñaNueva1"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/txtContraseñaNueva2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verifique su contraseña"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+
+        android:layout_below="@id/contrasenaNueva1"
+        android:layout_marginTop="35dp"
+        />
+
+    <EditText
+        android:id="@+id/contrasenaNueva2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Contraseña nueva"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+
+        android:layout_below="@id/txtContraseñaNueva2"
+        android:layout_marginTop="15dp"
+        />
+
+    <ImageButton
+        android:id="@+id/btnCN2"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:background="#ffffff"
+
+        android:layout_toRightOf="@+id/contrasenaNueva2"
+
+        android:layout_below="@id/txtContraseñaNueva2"
+        android:layout_marginTop="20dp"
+        />
+
+</RelativeLayout>

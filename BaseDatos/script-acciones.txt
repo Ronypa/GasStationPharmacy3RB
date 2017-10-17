@@ -1,1 +1,0 @@
-Insert into USUARIOS values ('AAA', 'aaa', 2)

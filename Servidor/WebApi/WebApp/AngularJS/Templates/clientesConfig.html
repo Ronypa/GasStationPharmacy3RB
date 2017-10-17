@@ -1,0 +1,45 @@
+﻿<ng-include src="urlMenuClientes"></ng-include>
+<div class="page-wrapper">
+    <div class="side-body">
+
+        <br>
+        <br>
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+
+                <div id="configuracion">
+                    <!-- PAGE HEADER -->
+                    <div class="page-header"><h1>Configuración</h1></div>
+                    <form name="configForm" ng-submit="submitFormConfig()" novalidate>
+
+
+                        <!-- PASSWORD -->
+                        <div class="form-group" ng-class="{ 'has-error' : configForm.passwordActual.$invalid && (configForm.passwordActual.$dirty || submitted)}">
+                            <label>Contraseña Actual</label>
+                            <input type="Password" name="passwordActual" class="form-control" ng-model="user.passwordActual" placeholder="Contraseña Actual" ng-required="true">
+                            <p ng-show="configForm.passwordActual.$error.required && (configForm.passwordActual.$dirty || submitted)" class="help-block">La contraseña  actual es requerida</p>
+                        </div>
+
+                        <!-- PASSWORD -->
+                        <div class="form-group" ng-class="{ 'has-error' : configForm.password.$invalid && (configForm.password.$dirty || submitted)}">
+                            <label>Nueva Contraseña</label>
+                            <input type="Password" name="password" class="form-control" ng-model="user.password" placeholder="Su nueva contraseña" ng-required="true">
+                            <p ng-show="configForm.password.$error.required && (configForm.password.$dirty || submitted)" class="help-block">La contraseña es requerida</p>
+                        </div>
+
+                        <!-- CONFIRM PASSWORD -->
+                        <div class="form-group" ng-class="{ 'has-error' : configForm.confirmPassword.$invalid && (configForm.confirmPassword.$dirty || submitted)}">
+                            <label>Confirmar Contraseña</label>
+                            <input type="Password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword" placeholder="Confirme su contraseña" ng-compare="password" ng-required="true">
+                            <p ng-show="configForm.confirmPassword.$error.required && (configForm.confirmPassword.$dirty || submitted)" class="help-block">La confirmación de nueva la contraseña es requerida</p>
+                            <p ng-show="configForm.confirmPassword.$error.compare  && (configForm.confirmPassword.$dirty || submitted)" class="help-block">Las contraseñas no coincide.</p>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary" ng-disabled="configForm.$invalid">Actualizar mi contraseña</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

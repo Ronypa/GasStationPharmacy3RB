@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Receta"
+    tools:showIn="@layout/activity_receta">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollBar">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/txtNombreReceta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la receta"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        />
+
+    <EditText
+        android:id="@+id/nombreReceta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Nombre"
+
+        android:layout_below="@+id/txtNombreReceta"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        />
+
+        <TextView
+            android:id="@+id/txtNumeroReceta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número de receta"
+            android:textSize="20dp"
+            android:textColor="#ab0000"
+
+            android:layout_below="@+id/nombreReceta"
+            android:layout_marginTop="5dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            />
+
+        <EditText
+            android:id="@+id/numeroReceta"
+            android:layout_width="match_parent"
+            android:maxLength="9"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Número"
+
+            android:layout_below="@+id/txtNumeroReceta"
+
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            />
+
+        <TextView
+            android:id="@+id/txtDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receta emitida por"
+            android:textSize="20dp"
+            android:textColor="#ab0000"
+
+            android:layout_below="@+id/numeroReceta"
+            android:layout_marginTop="5dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            />
+
+        <EditText
+            android:id="@+id/doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Doctor"
+
+            android:layout_below="@+id/txtDoctor"
+
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            />
+
+
+        <Button
+        android:id="@+id/btnReceta"
+        android:text="Agregar medicamentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctor"
+        android:layout_marginTop="5dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"/>
+
+    <ListView
+        android:id="@+id/lvMedicaReceta"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_below="@+id/btnReceta"
+        android:layout_marginTop="5dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        ></ListView>
+
+    <TextView
+        android:id="@+id/txtFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Foto de la receta"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+
+        android:layout_below="@+id/lvMedicaReceta"
+        android:layout_marginTop="5dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        />
+
+
+    <ImageButton
+        android:id="@+id/botonFoto"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/imagenreceta"
+
+        android:layout_below="@+id/txtFoto"
+        android:layout_marginTop="5dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        />
+
+    <ImageView
+        android:id="@+id/fotoReceta"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:contentDescription="Foto de la receta"
+        android:layout_below="@+id/botonFoto"
+        android:layout_marginTop="5dp"
+
+        />
+    </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

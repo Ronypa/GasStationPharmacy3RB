@@ -25,15 +25,35 @@ app.service('ServicioHTTP', function ($http) {
         });
         return request;
     };
-    this.getAll = function (apiRoute,token) {
+    this.getAll = function (apiRoute, token) {
         urlGet = apiRoute;
         return $http.get(urlGet, {
-            headers: { 'Authorization': 'Bearer '+token }
+            headers: { 'Authorization': 'Bearer ' + token }
         });
+    };
+
+    this.postLog = function (apiRoute, Model) {
+        var request = $http({
+            method: "post",
+            url: apiRoute,
+            data: Model,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+        return request;
     };
 
     this.getLogin = function (apiRoute, cedula, contrasena) {
         urlGet = apiRoute + '/' + cedula + '/' + contrasena;
         return $http.get(urlGet);
+    };
+
+    this.postToken = function (apiRoute, Model, token) {
+        var request = $http({
+            method: "post",
+            url: apiRoute,
+            data: Model,
+            headers: { 'Authorization': 'Bearer ' + token }
+        });
+        return request;
     };
 });

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace GasStationPharmacy.Models
+﻿namespace GasStationPharmacy.Models
 {
+    //Modelo general para la recepcion de dos strings
     public class ObjGeneral
     {
         public string opcion { get; set; }

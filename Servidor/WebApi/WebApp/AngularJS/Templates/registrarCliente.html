@@ -1,94 +1,106 @@
-﻿<link href="CSS/registroCliente.css" rel="stylesheet" />
+﻿<!--se agregan los diseños de la clase registroCliente.css-->
+<link href="CSS/registroCliente.css" rel="stylesheet" />
+<!--se grega las funcionalidad de la clase forDinamico(aqui hay funciones como la creacion dinamica de espacios del formulario y validadciones)-->
 <script src="AngularJS/formDinamico.js"></script>
-<div class="row">
-    <h2 class="form-encabezado" align="center" style="margin-bottom:50px; font-weight:bold">Por favor ingrese sus datos</h2>
-    <div class="col-md-4">
-        <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Nombre completo</h4>
-        <div class="container-fluid bloque2">
-            <form class="formulario" name="formNombre">
-                <input type="text" class="form-control" placeholder="Primer nombre" ng-model="registroNombre1" required />
-                <input type="text" class="form-control" placeholder="Segundo nombre" ng-model="registroNombre2" />
-                <input type="text" class="form-control" placeholder="Primer apellido" ng-model="registroApellido1" required />
-                <input type="text" class="form-control" placeholder="Segundo apellido" ng-model="registroApellido2" required />
-            </form>
+
+<!--Primera linea que contienes los formularios: Nombre, Lugar de residencia y otro-->
+
+<div class="row" style="width:100%">
+    <form method="post" name="registroClienteFormm" ng-submit="submitForm()" novalidate>
+        <h2 class="form-encabezado" align="center" style="margin-bottom:50px; font-weight:bold">Por favor ingrese sus datos</h2>
+        <div class="col-md-4">
+            <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Nombre completo</h4>
+            <div class="container-fluid bloque2">
+                <!--Nombre y Apellidos-->
+                <div class="formulario" name="formNombre">
+                    <input type="text" class="form-control" placeholder="Primer nombre" ng-model="registroNombre1" required />
+                    <input type="text" class="form-control" placeholder="Segundo nombre" ng-model="registroNombre2" />
+                    <input type="text" class="form-control" placeholder="Primer apellido" ng-model="registroApellido1" required />
+                    <input type="text" class="form-control" placeholder="Segundo apellido" ng-model="registroApellido2" />
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Lugar de residencia</h4>
-        <div class="container-fluid bloque3">
-            <form class="form-group" name="formLugar">
-                <select class="form-control1" ng-model="registroProvincia" onchange="this.className=this.options[this.selectedIndex].className" required>
-                    <option value="" selected hidden class="null">Selecione una provinca</option>
-                    <option value="San Jose" class="coloroption" style="background-color:#bbbbbb">San Jose</option>
-                    <option value="Alajuela" class="coloroption" style="background-color:#bbbbbb">Alajuega</option>
-                    <option value="Cartago" class="coloroption" style="background-color:#bbbbbb">Cartago</option>
-                    <option value="Heredia" class="coloroption" style="background-color:#bbbbbb">Heredia</option>
-                    <option value="Ganacaste" class="coloroption" style="background-color:#bbbbbb">Guanacaste</option>
-                    <option value="Puntarenas" class="coloroption" style="background-color:#bbbbbb">Puntarenas</option>
-                    <option value="Limon" class="coloroption" style="background-color:#bbbbbb">Limón</option>
-                </select>
-                <input type="text" class="form-control" placeholder="Ciudad" ng-model="registroCiudad" required />
-                <input type="text" class="form-control" placeholder="Señas o dirección de residencia" ng-model="registroSenas" required />
-            </form>
+        <div class="col-md-4">
+            <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Lugar de residencia</h4>
+            <div class="container-fluid bloque3">
+                <!--Lugar de resisdencia: Provincia, ciudad y señas-->
+                <div class="form-group" name="formLugar">
+                    <select class="form-control1" ng-model="registroProvincia" onchange="this.className=this.options[this.selectedIndex].className" required>
+                        <option value="" selected hidden class="null">Selecione una provinca</option>
+                        <option value="San Jose" class="coloroption" style="background-color:#bbbbbb">San Jose</option>
+                        <option value="Alajuela" class="coloroption" style="background-color:#bbbbbb">Alajuega</option>
+                        <option value="Cartago" class="coloroption" style="background-color:#bbbbbb">Cartago</option>
+                        <option value="Heredia" class="coloroption" style="background-color:#bbbbbb">Heredia</option>
+                        <option value="Guanacaste" class="coloroption" style="background-color:#bbbbbb">Guanacaste</option>
+                        <option value="Puntarenas" class="coloroption" style="background-color:#bbbbbb">Puntarenas</option>
+                        <option value="Limon" class="coloroption" style="background-color:#bbbbbb">Limón</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="Ciudad" ng-model="registroCiudad" />
+                    <input type="text" class="form-control" placeholder="Señas o dirección de residencia" ng-model="registroSenas" />
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Otros datos</h4>
-        <div class="container-fluid bloque3">
-            <form class="form-group" name="formOtros">
-                <input type="text" onfocus="(this.type='date')" class="form-control" placeholder="Fecha de nacimiento" ng-model="registroFechaNacimiento" min="1917-10-14" max="2017-10-14" required />
-                <input type="number" class="form-control" id="cedula" placeholder="Cédula" ng-model="registroCedula" oninput="largoCedula(this)" onkeydown="return (event.key !== 'e' && event.key !=='+' && event.key !=='-' && event.key !== ',' && event.key !=='.')" required>
-                <input type="password" class="form-control" placeholder="Contraseña" ng-model="registroPassword" name="contra" required>
-                <label class="checkbox-inline" style="color:black"><input type="checkbox" value="" onclick="if (contra.type === 'password') contra.type = 'text'; else contra.type='password' ">Mostrar contraseña</label>
-            </form>
-        </div>
-        <div class="row">
-            <div class="container">
+        <div class="col-md-4">
+            <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Otros datos</h4>
+            <div class="container-fluid bloque3">
+                <!--Otros datos como la fecha de nacimiento y la contraseña-->
+                <div class="form-group" name="formOtros">
+                    <input onblur="type='text'" onfocus="(this.type='date')" class="form-control" placeholder="Fecha de nacimiento" ng-model="registroFechaNacimiento" min="1900-01-01" max="1999-01-01" required />
+                    <input type="number" class="form-control" id="cedula" placeholder="Cédula" ng-model="registroCedula" oninput="largoCedula(this)" onkeydown="return (event.key !== 'e' && event.key !=='+' && event.key !=='-' && event.key !== ',' && event.key !=='.')" required>
+                    <input type="password" class="form-control" placeholder="Contraseña" ng-model="registroPassword" name="contra" required>
+                    <label class="checkbox-inline" style="color:black"><input type="checkbox" value="" onclick="if (contra.type === 'password') contra.type = 'text'; else contra.type='password' ">Mostrar contraseña</label>
+                </div>
+            </div>
+            <div class="row">
                 <p style="color:black">*La cédula y la contraseña serán sus datos para ingresar a la página.</p>
             </div>
         </div>
-    </div>
+    </form>
 </div>
-<div class="row" style="padding-top:15px">
-    <div class="col-md-5">
-        <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Historial de padecimientos</h4>
-        <div class="container-fluid bloque3">
-            <div id="formulariosPade">
-                <div class="col-md-5">
-                    <form name="formPade">
-                        <input type="text" class="form-control" id="padecimiento" placeholder="Padecimiento" name="a" ng-model="registroPadecimimeto" oninput="largoAdecuadoPade()" required />
-                    </form>
+<div class="row" style="padding-top:15px; width:100%">
+    <form method="post" name="registroClienteForm" ng-submit="submitForm()" novalidate>
+        <div class="col-md-5">
+            <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Historial de padecimientos</h4>
+            <div class="container-fluid bloque3">
+                <!--Padeciemientos y la fecha en la que se diganosticaron-->
+                <div id="formulariosPade">
+                    <div class="col-md-5">
+                        <div class="form-group" name="formPade">
+                            <input type="text" class="form-control" id="padecimiento" placeholder="Padecimiento" name="a" ng-model="registroPadecimiento" oninput="largoAdecuadoPade()" />
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group" name="formPadeFecha">
+                            <input onblur="type='text'" onfocus="(this.type='date')" class="form-control" id="fechaPade" placeholder="Fecha de pronóstico" ng-model="registroPadecimientoFecha" oninput="largoAdecuadoPade()" min="1917-10-14" max="2017-10-14" />
+                        </div>
+                    </div>
+                    <div class="col-md-1" style="margin-bottom:15px;">
+                        <button class="btn btn-success btn-sm" type="button" id="botonMasPade" onclick="dinamicoPade();" disabled> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                    </div>
+                    <div id="dinamico" ng-model="dinamico"></div>
                 </div>
-                <div class="col-md-5">
-                    <form name="formPadeFecha">
-                        <input type="text" onfocus="(this.type='date')" class="form-control" id="fechaPade" placeholder="Fecha de pronóstico" ng-model="registroPadecimientoFecha" oninput="largoAdecuadoPade()" min="1917-10-14" max="2017-10-14" required />
-                    </form>
-                </div>
-                <div class="col-md-1" style="margin-bottom:15px;">
-                    <button class="btn btn-success btn-sm" type="button" id="botonMasPade" onclick="dinamicoPade();" disabled> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
-                </div>
-                <div id="dinamico" ng-model="dinamico"></div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Telefonos</h4>
-        <div class="container-fluid bloque3">
-            <div class="col-md-10">
-                <form name="formTel">
-                    <input type="number" class="form-control" id="InputTelefono" placeholder="Telefono" ng-model="registroTel" oninput="largoAdecuadoTel();" onkeydown="return (event.key !== 'e' && event.key !=='+' && event.key !=='-' && event.key !== ',' && event.key !=='.')" required />
-                </form>
+        <div class="col-md-4">
+            <h4 class="form-encabezado" align="center" style="font-weight:bold; font-family:Georgia">Telefonos</h4>
+            <div class="container-fluid bloque3">
+                <div class="col-md-10">
+                    <!--Telefono o telefonos del cliente-->
+                    <div class="form-group" name="formTel">
+                        <input type="number" class="form-control" id="InputTelefono" placeholder="Telefono" ng-model="registroTel" oninput="largoAdecuadoTel();" onkeydown="return (event.key !== 'e' && event.key !=='+' && event.key !=='-' && event.key !== ',' && event.key !=='.')" required />
+                    </div>
+                </div>
+                <div class="col-md-1" style="margin-bottom:15px">
+                    <button class="btn btn-success btn-sm" type="button" onclick="dinamicoTel()" id="botonMasTel" disabled> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+                </div>
             </div>
-            <div class="col-md-1" style="margin-bottom:15px">
-                <button class="btn btn-success btn-sm" type="button" onclick="dinamicoTel()" id="botonMasTel" disabled> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
-            </div>
+            <div id="tels"></div>
         </div>
-        <div id="tels"></div>
-    </div>
-    <div class="col-md-3" id="ppp">
-        <div class="container-fluid contBoton" align="center" id="lll" style="padding-top:40px">
-            <button class="botonregistrar btn" type="button" ng-click="registrarCliente()" ng-disabled="formNombre.$invalid || formLugar.$invalid || formOtros.$invalid">Registrarse</button>
+        <div class="col-md-3" id="ppp">
         </div>
+    </form>
+    <div class="container-fluid contBoton" align="center" id="lll" style="padding-top:40px">
+        <button class="botonregistrar btn" type="button" ng-click="registrarCliente()" ng-disabled="registroClienteForm.$invalid||registroClienteFormm.$invalid">Registrarse</button>
     </div>
 </div>
 

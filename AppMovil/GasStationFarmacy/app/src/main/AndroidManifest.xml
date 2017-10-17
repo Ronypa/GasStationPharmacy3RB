@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bryan.gasstationfarmacy">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <protected-broadcast android:name="android.intent.action.MEDIA_MOUNTED" />
+
+    <application
+        android:name=".Global"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="Gas Station Farmacy">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Registro"
+            android:label="Registro"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".VistaCliente"
+            android:label="Gestión de pedidos"
+            />
+        <activity
+            android:name=".Pedido"
+            android:windowSoftInputMode="adjustPan"
+            android:label="Información del pedido" />
+        <activity
+            android:name=".CambioDeContrasena"
+            android:label="Cambiar contraseña"
+            android:parentActivityName=".VistaCliente">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VistaCliente" />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Productos"
+            android:label="Productos"
+            android:parentActivityName=".VistaCliente">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VistaCliente" />
+        </activity>
+        <activity
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:name=".Receta"
+            android:label="Receta">
+        </activity>
+        <activity
+            android:name=".ActualizacionDeDatos"
+            android:label="Actualización de datos"
+            android:parentActivityName=".VistaCliente">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VistaCliente" />
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".VistaCliente">
+
+    <item
+        android:id="@+id/actualizarme"
+        android:title="Actualizar mis datos"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/cambioContrasena"
+        android:title="Cambiar mi contraseña"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/eliminarme"
+        android:title="Eliminar mi cuenta"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+</menu>

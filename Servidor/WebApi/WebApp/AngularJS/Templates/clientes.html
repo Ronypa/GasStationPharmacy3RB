@@ -1,0 +1,311 @@
+﻿<link href="CSS/tabla.css" rel="stylesheet" />
+<link href="CSS/modal.css" rel="stylesheet" />
+<ng-include src="urlMenuClientes"></ng-include>
+<div class="page-wrapper">
+    <div class="side-body">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="4500">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="CSS/Imagenes/Inicio.png" class="img-responsive" alt="Chania" style="width:100%; height:100vh">
+                </div>
+                <div class="item">
+                    <img src="CSS/Imagenes/Farmacia_Phischel.PNG" class="img-responsive" alt="Chania" style="width:100%; height:100vh">
+                </div>
+                <div class="item">
+                    <img src="CSS/Imagenes/farmacia_bombatica.PNG" class="img-responsive" alt="Flower" style="width:100%; height:100vh">
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            $('.carousel').carousel({
+                interval: 3000
+            })
+        </script>
+
+        <!--Formulario para los pedidos-->
+        <div class="container" style="width:900px">
+            <div class="col-sm-8 col-sm-offset-2">
+
+                <div id="pedidos">
+                    <div class="col-sm-5 col-md-offset-4">
+                        <button type="button" class="btn-block btn-primary form-control" ng-click="getPedidosCliente()" data-toggle="modal" data-target="#modalPedidos">Ver mis pedidos</button>
+                    </div>
+                    <!-- PAGE HEADER -->
+                    <div class="page-header"><h1>Nuevo pedido</h1></div>
+                    <!-- FORM : YOU CAN DISABLE, HTML5 VALIDATION BY USING "novalidate" ATTRIBUTE-->
+                    <form name="pedidoForm" ng-submit="submitFormPedido()" novalidate>
+
+                        <!-- Nombre del pedido-->
+                        <div class="form-group" ng-class="{ 'has-error' : pedidoForm.nombre.$invalid  && (pedidoForm.nombre.$dirty || submitted) }">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" class="form-control" ng-model="nombre" placeholder="Nombre del pedido" required>
+                            <p ng-show="pedidoForm.nombre.$error.required && (pedidoForm.nombre.$dirty || submitted)" class="help-block">El nombre del pedido es requerido</p>
+                        </div>
+
+                        <!-- Compania -->
+                        <div class="form-group" ng-class="{ 'has-error' : pedidoForm.sucursal.$invalid  && (pedidoForm.sucursal.$dirty || submitted)}">
+                            <label>Compañía</label>
+                            <select ng-model="compania" ng-blur="getSucursales()" class="form-control" required>
+                                <option ng-repeat="compania in companias" value='{{compania.opcion}}'>{{compania.opcion}}</option>
+                            </select>
+                            <p ng-show="pedidoForm.compania.$error.required  && (pedidoForm.compania.$dirty || submitted)" class="help-block">La compañía en la que desea retirar el pedido es requerida.</p>
+                        </div>
+
+                        <!-- Sucursal -->
+                        <div class="form-group" ng-class="{ 'has-error' : pedidoForm.sucursal.$invalid  && (pedidoForm.sucursal.$dirty || submitted)}">
+                            <label>Sucursal</label>
+                            <select ng-model="sucursal" class="form-control" required>
+                                <option ng-repeat="sucursal in sucursales" value='{{sucursal.nombre}}'>{{sucursal.nombre}}</option>
+                            </select>
+                            <p ng-show="pedidoForm.sucursal.$error.required  && (pedidoForm.sucursal.$dirty || submitted)" class="help-block">La sucursal en la que desea retirar el pedido es requerida.</p>
+                        </div>
+
+
+                        <!-- Telefonos -->
+                        <div class="form-group" ng-class="{ 'has-error' : pedidoForm.telefono.$invalid  && (pedidoForm.telefono.$dirty || submitted)}">
+                            <label>Teléfono</label>
+                            <select ng-model="telefono" class="form-control" required>
+                                <option ng-repeat="telefono in telefonosCliente" value="{{telefono.opcion}}">{{telefono.opcion}}</option>
+                            </select>
+                            <p ng-show="pedidoForm.telefono.$error.required  && (pedidoForm.telefono.$dirty || submitted)" class="help-block">El telefono favorito es requerido</p>
+                        </div>
+
+                        <!--Fecha de recojo-->
+                        <div class="form-group">
+                            <label>Fecha de retiro</label>
+                            <input onblur="type='text'" onfocus="type='date'" ng-model="fechaRecojo" ng-focus="validarFecha_Hora()" class="form-control" name="fecha" placeholder="Fecha de retiro" required min="{{limitFecha}}" max="2018-01-01" />
+                        </div>
+
+                        <!--Hora de recojo-->
+                        <div class="form-group">
+                            <label>Hora de retiro</label>
+                            <input onblur="type='text'" onfocus="type='time'" class="form-control" ng-model="horaRecojo" name="hora" placeholder="Hora de retiro" required />
+                            <p>*Horario: Lunes a Domingo de 08:00 AM a 08:00 PM. La hora seleccionada debe ser al menos 4 horas después de la actual y dentro del horario establecido.</p>
+                        </div>
+
+                        <!--Productos-->
+                        <div class="form-group-lg">
+                            <label>Seleccione los productos de su pedido</label>
+                            <div class="container-fluid" style="overflow-y:scroll; height:150px;">
+                                <div class="row" style="width:100%">
+                                    <div class="col-sm-5">
+                                        <label>Nombre</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label>Precio</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Prescripción</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label>Cantidad</label>
+                                    </div>
+                                </div>
+                                <!--Seleccion de productos-->
+                                <div class="row" ng-repeat="producto in productos" style="width:100%">
+                                    <!--Nombre-->
+                                    <div class="col-sm-5">
+                                        <p style="display:inline-block">{{producto.nombre}}.</p>
+                                    </div>
+                                    <!--Precio-->
+                                    <div class="col-sm-2">
+                                        <p style="display:inline-block">₡{{producto.precio}}.</p>
+                                    </div>
+                                    <!--Prescripcion-->
+                                    <div class="col-sm-3">
+                                        <p style="display:inline-block">{{producto.prescripcion}}.</p>
+                                    </div>
+                                    <!--Cantidad seleccionada-->
+                                    <div class="col-sm-2">
+                                        <input type="number" ng-focus="" ng-blur="obtenerSeleccionados()" name="posiCajaCantidad" ng-model="cantidad" class="form-control" style="width:80px; height:20px; display:inline-block" min="0" max="1000" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Seleccion de la receta para los productos-->
+                        <div class="container-fluid" ng-repeat="n in hayConReceta">
+                            <label>Seleccione la receta para los siguientes productos</label>
+                            <div class="row" ng-repeat="producto in productosConReceta" style="margin-bottom:2px">
+                                <div class="col-sm-6">
+                                    <p>{{producto.medicamento}}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <select ng-model="receta" required class="form-control">
+                                        <option name="opcionesRecetas" ng-repeat="receta in recetasCliente" value="{{receta.opcion2}}">{{receta.opcion2}} - {{receta.opcion}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" ng-disabled="pedidoForm.$invalid" ng-click="realizarPedido()">Realizar pedido</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+
+        <!-- Modal para mostrar los pedidos hechos por el cliente -->
+        <div class="modal fade" id="modalPedidos" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <table style="width:100%; margin-top:-15px">
+                            <thead>
+                                <tr><th colspan="3">Mis recetas</th></tr>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th colspan="2">Número</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="pedido in pedidosCliente">
+                                    <td>{{pedido.opcion}}</td>
+                                    <td>{{pedido.opcion2}}</td>
+                                    <td>
+                                        <i class="material-icons button delete" data-toggle="modal" ng-click="getPedidoDetalles(pedido.opcion2)" data-target="#modalPedidosDetalles">Detalles/Editar</i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Modal para mostrar y editar los detalles de un pedido -->
+        <div class="modal fade" id="modalPedidosDetalles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="botoncerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Detalles de pedido</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                        <div class="bootstrap-iso">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="">
+                                        <form method="post" name="pedidoDetallesForm" ng-submit="submitForm()" novalidate>
+                                            <!-- Numero -->
+                                            <div class="form-group ">
+                                                <label>Numero</label>
+                                                <p>{{pedido.numero}}</p>
+                                            </div>
+                                            <!-- Estado -->
+                                            <div class="form-group ">
+                                                <label>Estado</label>
+                                                <p>{{pedido.estado}}</p>
+                                            </div>
+                                            <!-- Nombre -->
+                                            <div class="form-group" ng-class="{ 'has-error' : pedidoDetallesForm.nombre.$invalid && (pedidoDetallesForm.nombre.$dirty || submitted)}">
+                                                <label>Nombre</label>
+                                                <input type="text" name="nombre" class="form-control" ng-model="pedido.nombre" placeholder="Nombre" required>
+                                                <p ng-show="pedidoDetallesForm.nombre.$error.required && (pedidoDetallesForm.nombre.$dirty || submitted)" class="help-block">El nombre del pedido es requerido.</p>
+                                            </div>
+
+                                            <!-- Sucursal -->
+                                            <div class="form-group" ng-class="{ 'has-error' : pedidoDetallesForm.sucursal.$invalid  && (pedidoDetallesForm.sucursal.$dirty || submitted)}">
+                                                <label>Sucursal</label>
+                                                <select ng-model="pedido.sucursal" class="form-control" onchange="this.className=this.options[this.selectedIndex].className" required>
+                                                    <option value="" selected hidden>{{pedido.sucursal}}</option>
+                                                    <option ng-repeat="sucursal in sucursales" class="form-control" value='{{sucursal.nombre}}'>{{sucursal.nombre}}</option>
+                                                </select>
+                                                <p ng-show="pedidoDetallesForm.pedido.sucursal.$error.required  && (pedidoDetallesForm.pedido.sucursal.$dirty || submitted)" class="help-block">La sucursal en la que desea retirar el pedido es requerida.</p>
+                                            </div>
+
+                                            <!-- Telefonos -->
+                                            <div class="form-group" ng-class="{ 'has-error' : pedidoDetallesForm.telefono.$invalid  && (pedidoDetallesForm.telefono.$dirty || submitted)}">
+                                                <label>Teléfono</label>
+                                                <select ng-model="pedido.telefono" class="form-control" onchange="this.className=this.options[this.selectedIndex].className" required>
+                                                    <option value="" selected hidden>{{pedido.telefono}}</option>
+                                                    <option ng-repeat="telefono in telefonosCliente" class="form-control" value="{{telefono.opcion}}">{{telefono.opcion}}</option>
+                                                </select>
+                                                <p ng-show="pedidoDetallesForm.telefono.$error.required  && (pedidoDetallesForm.telefono.$dirty || submitted)" class="help-block">El telefono es requerido</p>
+                                            </div>
+
+                                            <!--Fecha de recojo-->
+                                            <div class="form-group" ng-class="{ 'has-error' : pedidoDetallesForm.fecha_recojo.$invalid  && (pedidoDetallesForm.fecha_recojo.$dirty || submitted)}">
+                                                <label>Fecha de retiro</label>
+                                                <input onblur="type='text'" onfocus="type='date'" ng-model="fecha_recojo" ng-focus="validarFecha_Hora()" class="form-control" name="fecha" placeholder="{{fecha_recojo}}" ng-required="true" min="{{limitFecha}}" max="2018-01-01" />
+                                                <p ng-show="pedidoDetallesForm.fecha_recojo.$error.required  && (pedidoDetallesForm.fecha_recojo.$dirty || submitted)" class="help-block">El telefono es requerido</p>
+                                            </div>
+
+                                            <!--Hora de recojo-->
+                                            <div class="form-group" ng-class="{ 'has-error' : pedidoDetallesForm.hora_recojo.$invalid  && (pedidoDetallesForm.hora_recojo.$dirty || submitted)}">
+                                                <label>Hora de retiro</label>
+                                                <input onblur="type='text'" onfocus="type='time'" class="form-control" ng-model="hora_recojo" name="hora" placeholder="Hora de retiro" ng-required="true" />
+                                                <p ng-show="pedidoDetallesForm.hora_recojo.$error.required  && (pedidoDetallesForm.hora_recojo.$dirty || submitted)" class="help-block">El telefono es requerido</p>
+                                            </div>
+
+                                            <!--Productos-->
+                                            <div class="form-group-lg">
+                                                <label>Productos de su pedido</label>
+                                                <div class="container-fluid" style="overflow-y:scroll; height:150px; width:100%">
+                                                    <div class="row" style="width:100%">
+                                                        <div class="col-sm-5">
+                                                            <label>Nombre</label>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <label>Cantidad</label>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <label>Receta</label>
+                                                        </div>
+                                                    </div>
+                                                    <!--Seleccion de productos-->
+                                                    <div class="row" ng-repeat="producto in pedido.productos" style="width:100%">
+                                                        <!--Nombre-->
+                                                        <div class="col-sm-5">
+                                                            <p style="display:inline-block">{{producto.medicamento}}</p>
+                                                        </div>
+                                                        <!--Cantidad seleccionada-->
+                                                        <div class="col-sm-4">
+                                                            <input type="number" ng-focus="" ng-blur="" name="posiCajaCantidadActualizar" value="{{producto.cantidad}}" class="form-control" style="width:80px; height:20px; display:inline-block" min="1" max="1000" />
+                                                        </div>
+                                                        <!--Receta-->
+                                                        <div class="col-sm-2">
+                                                            <p style="display:inline-block">{{producto.receta}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary" ng-disabled="clienteForm.$invalid" ng-click="aplicarCambios()">Actualizar pedido</button>
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

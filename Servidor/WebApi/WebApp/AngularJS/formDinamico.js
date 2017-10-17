@@ -12,7 +12,7 @@ function dinamicoPade() { //funcion que crea los inputs
     divtest.setAttribute("class", "form-group removeclassPade" + nombreNuevo); //se le da nombre
     var rdiv = 'removeclassPade' + nombreNuevo; //nombre
     //la siguiente linea crea el bloque html de los inputs
-    divtest.innerHTML = '<div class="col-md-5"><form><input type="text" class="form-control" placeholder="Padecimiento" name="a" ng-model="registroPadecimimeto" oninput="largoAdecuadoPade()" required/></form></div><div class="col-md-5"><form><input type="text" onfocus="(this.type=\'date\')" class="form-control" placeholder="Fecha de pronóstico" ng-model="registroPadecimimetoFecha" oninput="largoAdecuadoPade()" required/></form></div><div class="col-md-1"><button class="btn btn-danger btn-sm" type="button" onclick="remove_pades(' + nombreNuevo + ');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button></div>';
+    divtest.innerHTML = '<div class="col-md-5"><form><input type="text" class="form-control" placeholder="Padecimiento" name="a" ng-model="registroPadecimimeto" oninput="largoAdecuadoPade()" /></form></div><div class="col-md-5"><form><input onblur="type=\'text\'" onfocus="(this.type=\'date\')" class="form-control" placeholder="Fecha de pronóstico" ng-model="registroPadecimimetoFecha" oninput="largoAdecuadoPade()" /></form></div><div class="col-md-1"><button class="btn btn-danger btn-sm" type="button" onclick="remove_pades(' + nombreNuevo + ');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button></div>';
     objTo.appendChild(divtest);//se adiere el nuevo div
     document.getElementById('botonMasPade').disabled = true; //cada vez que se agrega un input se deshabilita el boton de agregar mas
 }

@@ -1,0 +1,91 @@
+﻿<ng-include src="urlMenuClientes"></ng-include>
+<div class="page-wrapper">
+    <div class="side-body">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- PAGE HEADER -->
+                <div class="page-header"><h1>Actulizacion de datos</h1></div>
+                <form name="clienteForm" ng-submit="submitFormActualizar()" novalidate>
+
+                    <!-- Primer Nombre -->
+                    <div name="nombre" id="nombre" class="form-group" ng-class="{ 'has-error' : clienteForm.nombre1.$invalid && (clienteForm.nombre1.$dirty || submitted)}">
+                        <label>Primer Nombre</label>
+                        <input type="text" name="nombre1" class="form-control" ng-model="nombre1" ng-required="true">
+                        <p ng-show="clienteForm.nombre1.$error.required && (clienteForm.nombre1.$dirty || submitted)" class="help-block">El primer nombre del ciente es requerido.</p>
+                    </div>
+
+                    <!-- Segundo Nombre -->
+                    <div class="form-group ">
+                        <label>
+                            Segundo Nombre
+                        </label>
+                        <input class="form-control" id="nombre2" ng-model="nombre2" name="nombre2" placeholder="Segundo Nombre" type="text" />
+                    </div>
+
+                    <!-- Primer Apellido -->
+                    <div class="form-group" ng-class="{ 'has-error' : clienteForm.apellido1.$invalid && (clienteForm.apellido1.$dirty || submitted)}">
+                        <label>Primer Apellido</label>
+                        <input type="text" name="apellido1" class="form-control" ng-model="apellido1" placeholder="Primer Apellido" ng-required="true">
+                        <p ng-show="clienteForm.apellido1.$error.required && (clienteForm.apellido1.$dirty || submitted)" class="help-block">El primer apellido del cliente es requerido.</p>
+                    </div>
+
+
+                    <!-- Segundo Apellido -->
+                    <div class="form-group ">
+                        <label>
+                            Segundo Apellido
+                        </label>
+                        <input class="form-control" id="apellido2" name="apellido2" ng-model="apellido2" placeholder="Segundo Apellido" type="text" />
+                    </div>
+
+
+                    <!-- Provincia -->
+                    <div class="form-group" ng-class="{ 'has-error' : clienteForm.provincia.$invalid  && (clienteForm.provincia.$dirty || submitted)}">
+                        <label>Provincia</label>
+                        <select ng-model="provincia" name="provincia" class="form-control" onchange="this.className=this.options[this.selectedIndex].className">
+                            <option value="" selected hidden class="null">Selecione una provinca</option>
+                            <option value="San Jose" class="form-control">San Jose</option>
+                            <option value="Alajuela" class="form-control">Alajuela</option>
+                            <option value="Cartago" class="form-control">Cartago</option>
+                            <option value="Heredia" class="form-control">Heredia</option>
+                            <option value="Ganacaste" class="form-control">Guanacaste</option>
+                            <option value="Puntarenas" class="form-control">Puntarenas</option>
+                            <option value="Limón" class="form-control">Limón</option>
+                        </select>
+                        <p ng-show="clienteForm.provincia.$error.required  && (clienteForm.provincia.$dirty || submitted)" class="help-block">Seleccione la provincia.</p>
+                    </div>
+
+                    <!-- Cuidad-->
+                    <div class="form-group ">
+                        <label>
+                            Cuidad
+                        </label>
+                        <input class="form-control" id="cuidad" name="cuidad" placeholder="Cuidad" type="text" ng-model="ciudad" />
+                    </div>
+
+                    <!-- Señas -->
+                    <div class="form-group ">
+                        <label>
+                            Señas
+                        </label>
+                        <input class="form-control" id="señas" ng-model="senas" name="señas" placeholder="Señas" type="text" />
+                    </div>
+
+                    <!-- Fecha Nacimiento-->
+                    <div class="form-group">
+                        <label>Fecha de nacimiento</label>
+                        <input onblur="type='text'" onfocus="(type='date')" class="min-today form-control" placeholder="Fecha de nacimiento" ng-model="fechaNacimiento" max="1999-01-01" min="1900-01-01" required />
+                    </div>
+
+                    <!-- Telefono -->
+                    <div class="form-group" ng-class="{ 'has-error' : clienteForm.telefono.$invalid && (clienteForm.telefono.$dirty || submitted)}">
+                        <label>Telefono principal</label>
+                        <input type="number" name="telefono" class="form-control" ng-model="telefono" ng-maxlength="8" placeholder="Ejm: 8888 8888">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" ng-disabled="clienteForm.$invalid">Actualizar mis datos</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

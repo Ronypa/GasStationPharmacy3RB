@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ActualizacionDeDatos"
+    tools:showIn="@layout/activity_actualizacion_datos">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollBar">
+
+        <LinearLayout
+            android:id="@+id/layoA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNombreA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textSize="20dp"
+                android:textColor="#ab0000"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+
+                />
+
+            <EditText
+                android:id="@+id/nombre1A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Primer Nombre"
+                android:textCursorDrawable="@android:color/holo_blue_dark"
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+
+                />
+
+            <EditText
+                android:id="@+id/nombre2A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Segundo Nombre"
+                android:textCursorDrawable="@android:color/holo_blue_dark"
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+
+                />
+
+            <EditText
+                android:id="@+id/apellido1A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Primer Apellido"
+                android:textCursorDrawable="@android:color/holo_blue_dark"
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+
+                />
+
+            <EditText
+                android:id="@+id/apellido2A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Segundo Apellido"
+                android:textCursorDrawable="@android:color/holo_blue_dark"
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+
+                />
+
+            <TextView
+                android:id="@+id/txtDireccionA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dirección"
+                android:textSize="20dp"
+                android:textColor="#ab0000"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+
+                />
+
+            <Spinner
+                android:id="@+id/provinciaA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <EditText
+                android:id="@+id/ciudadA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Ciudad"
+                android:textCursorDrawable="@android:color/holo_blue_dark"
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+
+                />
+
+            <EditText
+                android:id="@+id/senasA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Señas"
+                android:textCursorDrawable="@android:color/holo_blue_dark"
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha de nacimiento"
+                android:textSize="20dp"
+                android:textColor="#ab0000"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+
+                />
+
+            <EditText
+                android:id="@+id/nacimientoA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:inputType="none"
+                android:hint="Fecha de nacimiento"
+                android:textCursorDrawable="@android:color/holo_blue_dark"
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contacto"
+                android:textSize="20dp"
+                android:textColor="#ab0000"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                />
+
+            <EditText
+                android:id="@+id/telefonoA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Teléfono"
+                android:maxLength="8"
+                android:inputType="number"
+                android:textCursorDrawable="@android:color/holo_blue_dark"
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                />
+
+            <ImageButton
+                android:id="@+id/masTelefonoA"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/mas"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                />
+
+            <ImageButton
+                android:id="@+id/menosTelefonoA"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/menos"
+
+                android:translationX="35dp"
+                android:translationY="-30dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Padecimientos"
+                android:textSize="20dp"
+                android:textColor="#ab0000"
+
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/layoPadecimientoA"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+                    <EditText
+                        android:id="@+id/padecimientoA"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:hint="Enfermedad"
+                        android:textCursorDrawable="@android:color/holo_blue_dark"
+                        android:backgroundTint="@android:color/holo_blue_dark"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layoAnoA"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@+id/layoPadecimientoA">
+                    <EditText
+                        android:id="@+id/anoPadecimientoA"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number"
+                        android:hint="Año"
+                        android:textCursorDrawable="@android:color/holo_blue_dark"
+                        android:backgroundTint="@android:color/holo_blue_dark"
+                        />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/masPadecimientoA"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/mas"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                />
+
+            <ImageButton
+                android:id="@+id/menosPadecimientoA"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/menos"
+
+                android:translationX="35dp"
+                android:translationY="-30dp"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

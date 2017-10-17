@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_pedido">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/farmacia3n"
+        android:id="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/txtNombrePedido"
+        android:text="Nombre del pedido"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/txtCompania"
+        android:text="Compañía"
+        android:layout_below="@+id/txtNombrePedido"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/txtSucursal"
+        android:text="Sucursal de retiro"
+        android:layout_below="@+id/txtCompania"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/txtTelefono"
+        android:text="Teléfono favorito"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtSucursal"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/txtFechaRecojo"
+        android:text="Fecha de retiro"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTelefono"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/txtHoraRecojo"
+        android:text="Hora de retiro"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtFechaRecojo"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/txtMedicamentos"
+        android:text="Productos"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#ab0000"
+        android:layout_below="@+id/horaRecojo"
+        android:layout_marginLeft="5dp"
+
+        />
+
+    <EditText
+        android:id="@+id/nombrePedido"
+        android:hint="Nombre"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txtNombrePedido"
+        android:paddingTop="15dp"
+
+        />
+
+    <Spinner
+        android:id="@+id/compania"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombrePedido"
+        android:layout_toRightOf="@+id/txtSucursal" />
+
+    <Spinner
+        android:id="@+id/sucursal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/compania"
+        android:layout_toRightOf="@+id/txtSucursal"
+        android:layout_marginTop="20dp"/>
+
+    <Spinner
+        android:id="@+id/telefono"
+        android:layout_toRightOf="@+id/txtTelefono"
+        android:layout_below="@+id/sucursal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/fechaRecojo"
+        android:hint="Fecha"
+        android:layout_width="200dp"
+        android:inputType="none"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txtMedicamentos"
+        android:layout_below="@+id/telefono"
+        android:editable="false"
+        android:layout_marginTop="5dp"
+        />
+
+    <EditText
+        android:id="@+id/horaRecojo"
+        android:hint="Hora"
+        android:layout_width="200dp"
+        android:inputType="none"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txtHoraRecojo"
+        android:layout_below="@+id/fechaRecojo"
+        android:editable="false"
+
+        />
+
+    <ListView
+        android:id="@+id/pedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="afterDescendants"
+        android:layout_below="@+id/txtMedicamentos" />
+
+</RelativeLayout>

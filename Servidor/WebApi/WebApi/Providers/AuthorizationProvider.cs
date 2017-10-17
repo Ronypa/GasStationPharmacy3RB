@@ -4,6 +4,8 @@ using Microsoft.Owin.Security.OAuth;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using GasStationPharmacy.Models;
+
 
 namespace WebApi.Providers
 {
@@ -30,6 +32,16 @@ namespace WebApi.Providers
             return Task.FromResult<object>(null);
         }
 
+        public override Task TokenEndpoint(OAuthTokenEndpointContext context)
+        {
+            foreach (KeyValuePair<string, string> property in context.Properties.Dictionary)
+            {
+                context.AdditionalResponseParameters.Add(property.Key, property.Value);
+            }
+
+            return Task.FromResult<object>(null);
+        }
+
         /// <summary>
         /// Se valida la solicitud de logeo y si es correcta se envia a generar el token
         /// </summary>
@@ -40,7 +52,8 @@ namespace WebApi.Providers
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             var identity = new ClaimsIdentity("JWT");
-
+            var admin = "false";
+            ObjGeneral compania = null;
             //Cuando se está intentando logear un cliente
             if (context.ClientId=="cliente") {
                 if (!ProcesadorCliente.ProcesoLogearCliente(int.Parse(context.UserName), context.Password))
@@ -51,6 +64,11 @@ namespace WebApi.Providers
                 else {
                     identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
                     identity.AddClaim(new Claim(ClaimTypes.Role, "Cliente"));
+                    
+                    //Se genera el ticket del token si el logeo es correcto
+                    var ticket = new AuthenticationTicket(identity, null);
+                    context.Validated(ticket);
+                    return Task.FromResult<object>(null);
                 }
             }
 
@@ -68,20 +86,24 @@ namespace WebApi.Providers
                     foreach (string rol in roles)
                     {
                         identity.AddClaim(new Claim(ClaimTypes.Role, rol));
+                        if (rol == "Administrador") {
+                            admin = "true";
+                        }
                     }
                 }
+                compania = ProcesadorEmpleado.ProcesoConsultarCompañia(int.Parse(context.UserName));
+                var props = new AuthenticationProperties(new Dictionary<string, string>
+                    { {"admin", admin},{"compañia",compania.opcion}, { "sucursal", compania.opcion2 } });
+                //Se genera el ticket del token si el logeo es correcto
+                var ticket = new AuthenticationTicket(identity, props);
+                context.Validated(ticket);
+                return Task.FromResult<object>(null);
             }
-
             //Cuando es una solicitud incorrecta
             else {
                 context.SetError("Login incorrecto", "Id de solicitud incorrecto");
                 return Task.FromResult<object>(null);
             }
-
-            //Se genera el ticket del token si el logeo es correcto
-            var ticket = new AuthenticationTicket(identity, null);
-            context.Validated(ticket);
-            return Task.FromResult<object>(null);
         }
     }
 }

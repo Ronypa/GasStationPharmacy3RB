@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AngularJS\formDinamico.js" />
     <Content Include="AngularJS\Scripts\controllers.js" />
+    <Content Include="AngularJS\Scripts\controllersCliente.js" />
     <Content Include="AngularJS\Scripts\factories.js" />
     <Content Include="AngularJS\Scripts\services.js" />
     <Content Include="AngularJS\Templates\adminEmpleados.html" />
@@ -76,6 +77,11 @@
     <Content Include="AngularJS\Templates\adminProductos.html" />
     <Content Include="AngularJS\Templates\adminRoles.html" />
     <Content Include="AngularJS\Templates\adminSucursales.html" />
+    <Content Include="AngularJS\Templates\clientes.html" />
+    <Content Include="AngularJS\Templates\clientesActDatos.html" />
+    <Content Include="AngularJS\Templates\clientesConfig.html" />
+    <Content Include="AngularJS\Templates\clientesRecetas.html" />
+    <Content Include="AngularJS\Templates\menuClientes.html" />
     <Content Include="AngularJS\Templates\menuLateral.html" />
     <Content Include="AngularJS\Templates\pedidosFactu.html" />
     <Content Include="AngularJS\Templates\pedidosPrepa.html" />
@@ -117,10 +123,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CSS\admin.css" />
+    <Content Include="CSS\clientesRecetas.css" />
     <Content Include="CSS\Imagenes\farmacel.jpg" />
+    <Content Include="CSS\Imagenes\farmacia_bombatica.PNG" />
+    <Content Include="CSS\Imagenes\Farmacia_Phischel.PNG" />
     <Content Include="CSS\Imagenes\farmapc.png" />
     <Content Include="CSS\Imagenes\fondoReg.jpg" />
+    <Content Include="CSS\Imagenes\fondoReg2.jpg" />
     <Content Include="CSS\Imagenes\fondoRegcel.jpg" />
+    <Content Include="CSS\Imagenes\Inicio.png" />
     <Content Include="CSS\modal.css" />
     <Content Include="CSS\tabla.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

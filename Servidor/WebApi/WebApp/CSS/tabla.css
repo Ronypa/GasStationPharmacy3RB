@@ -67,3 +67,7 @@ td:last-child {
 .delete:hover {
   color: #dc2a2a;
 }
+
+.form-group input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

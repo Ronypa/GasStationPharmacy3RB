@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GasStationFarmacy</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_register">register</string>
+    <string name="title_activity_vistageneral">vistageneral</string>
+    <string name="title_activity_vista_cliente">vista_cliente</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_pedido">pedido</string>
+    <string name="title_activity_cambio_contrasena">cambioContrasena</string>
+    <string name="Password">Password</string>
+    <string name="title_activity_productos">productos</string>
+    <string name="title_activity_receta">receta</string>
+    <string name="title_activity_vista_general">vista_general</string>
+    <string name="title_activity_actualizacion_datos">actualizacion_datos</string>
+</resources>

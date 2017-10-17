@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace GasStationPharmacy.Models
+﻿namespace GasStationPharmacy.Models
 {
+    /// <summary>
+    /// Modelo de la informacion que se almacena de los medicamentos por receta
+    /// </summary>
     public class MedicamentoReceta
     {
         public string medicamento { get; set; }

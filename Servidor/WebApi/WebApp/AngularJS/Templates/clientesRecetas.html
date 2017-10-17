@@ -1,0 +1,219 @@
+﻿<link href="CSS/clientesRecetas.css" rel="stylesheet" />
+<link href="CSS/tabla.css" rel="stylesheet" />
+
+<ng-include src="urlMenuClientes"></ng-include>
+<div class="page-wrapper">
+    <div class="side-body">
+        <div class="container">
+            <div class="col-sm-5 col-md-offset-4">
+                <button type="button" class="btn-block btn-primary form-control" ng-click="getRecetasCliente()" data-toggle="modal" data-target="#modalRecetas">Ver mis recetas</button>
+            </div>
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- PAGE HEADER -->
+                <div class="page-header"><h1>Receta nueva</h1></div>
+                <!-- FORM : YOU CAN DISABLE, HTML5 VALIDATION BY USING "novalidate" ATTRIBUTE-->
+                <form name="recetaForm" ng-submit="submitForm()" novalidate>
+                    <!-- Nombre de la Receta-->
+                    <div class="form-group" ng-class="{ 'has-error' : recetaForm.nombreReceta.$invalid  && (recetaForm.nombreReceta.$dirty || submitted) }">
+                        <label>Nombre de la receta</label>
+                        <input type="text" name="nombreReceta" class="form-control" ng-model="nombreReceta" placeholder="Nombre de la receta" required>
+                        <p ng-show="recetaForm.nombreReceta.$error.required && (recetaForm.nombreReceta.$dirty || submitted)" class="help-block">El nombre de la receta es requerido</p>
+                    </div>
+                    <!--Numero de la receta-->
+                    <div class="form-group" ng-class="{ 'has-error' : recetaForm.numero.$invalid  && (recetaForm.numero.$dirty || submitted) }">
+                        <label>Número</label>
+                        <input type="number" name="numero" class="form-control" ng-model="numero" placeholder="Número de la receta" onkeydown="return (event.key !== 'e' && event.key !=='+' && event.key !=='-' && event.key !== ',' && event.key !=='.')" required>
+                        <p ng-show="recetaForm.numero.$error.required && (recetaForm.numero.$dirty || submitted)" class="help-block">El número de la receta es requerido</p>
+                    </div>
+
+                    <!--Nombre del doctor-->
+                    <div class="form-group" ng-class="{ 'has-error' : recetaForm.nombreDoctor.$invalid  && (recetaForm.nombreDoctor.$dirty || submitted) }">
+                        <label>Nombre del doctor a cargo</label>
+                        <input type="text" name="nombreDoctor" class="form-control" ng-model="nombreDoctor" placeholder="Nombre del doctor" required>
+                        <p ng-show="recetaForm.nombreDoctor.$error.required && (recetaForm.nombreDoctor.$dirty || submitted)" class="help-block">El nombre del doctor es requerido</p>
+                    </div>
+                    <!--Productos de la receta-->
+                    <!--Productos-->
+                    <div class="form-group-lg">
+                        <label>Seleccione los productos de la receta</label>
+                        <div class="container" style="overflow-y:scroll; height:150px; width:100%">
+                            <div class="row" style="width:100%">
+                                <div class="col-sm-6">
+                                    <label>Nombre</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Cantidad</label>
+                                </div>
+                            </div>
+                            <!--Seleccion de productos-->
+                            <div class="row" ng-repeat="producto in productoParaReceta" style="width:100%">
+                                <!--Nombre-->
+                                <div class="col-sm-6">
+                                    <p style="display:inline-block">{{producto.nombre}}.</>
+                                </div>
+                                <!--Cantidad seleccionada-->
+                                <div class="col-sm-2">
+                                    <input type="number" id="posiCajaCantidad" name="posiCajaCantidad" ng-blur="obtenerProductosSeleccionados()" ng-model="cantidad" class="form-control" style="width:80px; height:20px; display:inline-block;" min="0" max="1000" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Seleccion de la imagen-->
+                    <div class="form-group">
+                        <div name="select" ng-dropdown-multiselect="" options="example13data" selected-model="example13select" extra-settings="example13settings" ng-dropdown-required ng-model="model.select"></div>
+                    </div>
+
+                    <!--Cargar la imagen-->
+                    <div class="form-group">
+                        <label>Seleccione una imagen</label>
+                        <div class="input-group image-preview">
+                            <!-- image-preview-filename input [CUT FROM HERE]-->
+                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                            <!-- image-preview-input -->
+                            <div class="btn btn-default image-preview-input">
+                                <span class="glyphicon glyphicon-folder-open"></span>
+                                <span class="image-preview-input-title">Buscar</span>
+                                <input type="file" id="ima" accept="image/png, image/jpeg, image/gif" onchange="convertirImagen(this.files[0])" ng-model="myFile" valid-file required /> <!-- rename it -->
+                                <label ng-show="myForm.myFile.$error.validFile">La imagen es requerida</label>
+                            </div>
+                        </div><!-- /input-group image-preview [TO HERE]-->
+                    </div>
+                    <button type="submit" class="btn btn-primary" ng-disabled="recetaForm.$invalid" ng-click="agregarReceta()">Crear Receta</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-- Modal para mostrar las recetas -->
+        <div class="modal fade" id="modalRecetas" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <table style="width:100%; margin-top:-15px">
+                            <thead>
+                                <tr><th colspan="3">Mis recetas</th></tr>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th colspan="2">Número</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="receta in recetasCliente">
+                                    <td>{{receta.opcion}}</td>
+                                    <td>{{receta.opcion2}}</td>
+                                    <td>
+                                        <i class="material-icons button delete" data-toggle="modal" ng-click="detallesReceta(receta.opcion2)" data-target="#modalRecetasDetalles">Detalles/Editar</i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Modal para editar y mostrar los detalles de una receta -->
+        <div class="modal fade" id="modalRecetasDetalles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="botoncerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Detalles de pedido</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                        <div class="bootstrap-iso">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="">
+                                        <form method="post" name="recetaDetallesForm" ng-submit="submitForm()" novalidate>
+                                            <!-- Numero -->
+                                            <div class="form-group ">
+                                                <label>Numero</label>
+                                                <p>{{receta.numero}}</p>
+                                            </div>
+                                            <!-- Nombre de la Receta-->
+                                            <div class="form-group" ng-class="{ 'has-error' : recetaDetallesForm.nombreReceta.$invalid  && (recetaDetallesForm.nombreReceta.$dirty || submitted) }">
+                                                <label>Nombre de la receta</label>
+                                                <input type="text" name="nombreReceta" class="form-control" ng-model="receta.nombre" placeholder="Nombre de la receta" required>
+                                                <p ng-show="recetaDetallesForm.nombreReceta.$error.required && (recetaDetallesForm.nombreReceta.$dirty || submitted)" class="help-block">El nombre de la receta es requerido</p>
+                                            </div>
+                                            <!--Nombre del doctor-->
+                                            <div class="form-group" ng-class="{ 'has-error' : recetaDetallesForm.nombreDoctor.$invalid  && (recetaDetallesForm.nombreDoctor.$dirty || submitted) }">
+                                                <label>Nombre del doctor a cargo</label>
+                                                <input type="text" name="nombreDoctor" class="form-control" ng-model="receta.doctor" placeholder="Nombre del doctor" required>
+                                                <p ng-show="recetaDetallesForm.nombreDoctor.$error.required && (recetaDetallesForm.nombreDoctor.$dirty || submitted)" class="help-block">El nombre del doctor es requerido</p>
+                                            </div>
+                                            <!--Productos-->
+                                            <div class="form-group-lg">
+                                                <label>Productos de su receta</label>
+                                                <div class="container-fluid" style="overflow-y:scroll; height:100px;">
+                                                    <div class="row" style="width:100%">
+                                                        <div class="col-sm-5">
+                                                            <label>Nombre</label>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <label>Cantidad</label>
+                                                        </div>
+                                                    </div>
+                                                    <!--Seleccion de productos-->
+                                                    <div class="row" ng-repeat="producto in detallesProductos" style="width:100%">
+                                                        <!--Nombre-->
+                                                        <div class="col-sm-5">
+                                                            <p style="display:inline-block">{{producto.medicamento}}.</>
+                                                        </div>
+                                                        <!--Cantidad seleccionada-->
+                                                        <div class="col-sm-2">
+                                                            <input type="number" ng-focus="" ng-blur="obtenerProductosSeleccionadosEditados()" name="posiCajaCantidadEditados" value="{{producto.cantidad}}" class="form-control" style="width:80px; height:20px; display:inline-block" min="1" max="1000" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <label>Imagen:</label>
+                                            <div class="container" style="max-width:550px;">
+                                                <img id="imaRec" style="width:100%;" src="{{receta.imagen}}" />
+                                            </div>
+                                            <!--Cargar la imagen-->
+                                            <div class="form-group">
+                                                <label>Seleccione una nueva imagen</label>
+                                                <div class="input-group ">
+                                                    <!-- image-preview-filename input [CUT FROM HERE]-->
+                                                    <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                                    <!-- image-preview-input -->
+                                                    <div class="btn btn-default image-preview-input">
+                                                        <span class="glyphicon glyphicon-folder-open"></span>
+                                                        <span class="image-preview-input-title">Cambiar</span>
+                                                        <input type="file" id="ima" accept="image/png, image/jpeg, image/gif" onchange="convertirImagenEditada(this.files[0])" ng-model="myFile" valid-file /> <!-- rename it -->
+                                                    </div>
+                                                </div><!-- /input-group image-preview [TO HERE]-->
+                                            </div>
+                                            <div class="form-group">
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary" ng-disabled="clienteForm.$invalid" ng-click="aplicarCambiosReceta()">Actualizar receta</button>
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
